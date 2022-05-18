@@ -3,6 +3,10 @@ h1 {
     background: red;
 }
 
+h2 {
+    text-align: center;
+}
+
 nav {
     line-height: 100px;
     background: blue;
@@ -11,6 +15,15 @@ nav {
 .right {
     line-height: 100px;
     background: #ff0;
+}
+
+p {
+    line-height: 50px;
+    text-align: center;
+}
+
+em {
+    line-height: 50px;
 }
 
 .header01 {
@@ -45,6 +58,14 @@ nav {
     margin: 0 0 0 auto;
 }
 
+.header06 {
+    display: flex;
+}
+
+.header06 nav {
+    margin: 0 0 0 auto;
+}
+
 .basic {
     line-height: 100px;
 }
@@ -65,5 +86,28 @@ nav {
 }
 
 .basic .icon {
+    margin: 0 0 0 30px;
+}
+
+.bottom {
+    line-height: 100px;
+}
+
+.bottom .container {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.bottom nav {
+    margin: 0 0 0 auto;
+}
+
+.bottom nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.bottom .icon {
     margin: 0 0 0 30px;
 }
