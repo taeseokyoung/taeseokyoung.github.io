@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position 02 fix</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/position02.css">
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href=""></a>menu01</li>
+            <li><a href=""></a>menu02</li>
+            <li><a href=""></a>menu03</li>
+            <li><a href=""></a>menu04</li>
+            <li><a href=""></a>menu05</li>
+            <li><a href=""></a>menu06</li>
+        </ul>
+    </nav>
+    <div class="mopen">
+        <span></span><span></span><span></span><span></span>
+    </div>
+    <script>
+        document.querySelector('.mopen').addEventListener('click', function () {
+            document.querySelector('nav').classList.toggle('oo');
+            document.querySelector('.mopen').classList.toggle('oo');
+        })
+    </script>
+</body>
+
+</html>
