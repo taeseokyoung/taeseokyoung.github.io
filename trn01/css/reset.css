@@ -29,7 +29,9 @@ body {
 
 }
 
-
+img {
+    vertical-align: middle;
+}
 
 
 /* 리셋은 보통 basic.css, common.css 이라는 이름으로 한다 */
