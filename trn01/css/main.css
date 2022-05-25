@@ -148,3 +148,34 @@ body {
     line-height: 1.4;
 
 }
+
+.main_visual figure {
+    height: 30rem;
+}
+
+.main_visual .itm01 {
+    background: url(../img/main_bg01.jpg) no-repeat center center/100%;
+}
+
+.main_visual .itm01.on {
+    background: url(../img/main_bg01.jpg) no-repeat center center/150%;
+    transition: 2s;
+}
+
+.main_visual .itm02 {
+    background: url(../img/main_bg02.jpg) no-repeat center center/100%;
+}
+
+.main_visual .itm02.on {
+    background: url(../img/main_bg02.jpg) no-repeat center center/150%;
+    transition: 2s;
+}
+
+.main_visual .itm03 {
+    background: url(../img/main_bg03.jpg) no-repeat center center/100%;
+}
+
+.main_visual .itm03.on {
+    background: url(../img/main_bg03.jpg) no-repeat center center/150%;
+    transition: 2s;
+}
