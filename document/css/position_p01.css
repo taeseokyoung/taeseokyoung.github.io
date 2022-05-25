@@ -1,0 +1,82 @@
+.cr {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #333;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    transform: translate(-50%, -50%);
+}
+
+.cr .c01 {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    background-color: #333;
+    width: 80px;
+    height: 80px;
+    transform: rotate(225deg);
+}
+
+.cr .c01.on {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    background-color: #333;
+    width: 80px;
+    height: 80px;
+    transform: rotate(45deg);
+}
+
+.cr .c02 {
+    position: absolute;
+    top: 30%;
+    right: 20%;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    background-color: #333;
+    width: 80px;
+    height: 80px;
+    transform: rotate(225deg);
+}
+
+.cr .c02.on {
+    position: absolute;
+    top: 30%;
+    right: 20%;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    background-color: #333;
+    width: 80px;
+    height: 80px;
+    transform: rotate(45deg);
+}
+
+.cr .c03 {
+    position: absolute;
+    bottom: 10%;
+    left: 40%;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    background-color: #333;
+    width: 80px;
+    height: 80px;
+    transform: translate(0, -40%) rotate(45deg);
+}
+
+.cr .c03.on {
+    position: absolute;
+    bottom: 10%;
+    left: 40%;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    background-color: #333;
+    width: 80px;
+    height: 80px;
+    transform: translate(0, -40%) rotate(225deg);
+}
