@@ -108,6 +108,17 @@ body {
     position: relative;
 }
 
+.main_visual::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/pt-bg04.png);
+
+}
+
 .main_visual .main_slider img {
     width: 100%;
 }
@@ -122,6 +133,7 @@ body {
     color: var(--wc);
     text-shadow: 0 0 2px var(--dc);
     /* 가로 세로 블러 색상 사이즈를 차지하지 않는다. 레이아웃을 안깬다.*/
+    z-index: 999;
 }
 
 .main_visual .slogan h2 {
@@ -154,28 +166,194 @@ body {
 }
 
 .main_visual .itm01 {
-    background: url(../img/main_bg01.jpg) no-repeat center center/100%;
+    background: url(../img/main_bg01.jpg) no-repeat center center/auto 100%;
 }
 
 .main_visual .itm01.on {
-    background: url(../img/main_bg01.jpg) no-repeat center center/150%;
+    background: url(../img/main_bg01.jpg) no-repeat center center/auto 120%;
     transition: 2s;
 }
 
 .main_visual .itm02 {
-    background: url(../img/main_bg02.jpg) no-repeat center center/100%;
+    background: url(../img/main_bg02.jpg) no-repeat center center/auto 100%;
 }
 
 .main_visual .itm02.on {
-    background: url(../img/main_bg02.jpg) no-repeat center center/150%;
+    background: url(../img/main_bg02.jpg) no-repeat center center/auto 120%;
     transition: 2s;
 }
 
 .main_visual .itm03 {
-    background: url(../img/main_bg03.jpg) no-repeat center center/100%;
+    background: url(../img/main_bg03.jpg) no-repeat center center/auto 100%;
 }
 
 .main_visual .itm03.on {
-    background: url(../img/main_bg03.jpg) no-repeat center center/150%;
+    background: url(../img/main_bg03.jpg) no-repeat center center/auto 120%;
     transition: 2s;
+}
+
+.content {
+    padding: 100px 0;
+}
+
+.content .container {
+    display: flex;
+    gap: 30px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.content figure {
+    flex: 1;
+
+    /*.content .container>* 하나씩 나눠가져라 */
+}
+
+.content figure .box {
+    margin: 0 0 20px 0;
+    overflow: hidden;
+}
+
+/*.content .container figure는 .content figure로 쓸 수 있찌요*/
+
+.content figure img {
+    transition: 0.5s;
+}
+
+.content figure:hover img {
+    transform: scale(1.5);
+}
+
+.content strong {
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 0 17px 0;
+}
+
+/*(inline 태그에도 먹는다 글자 박스 다 된다.) display block과 margin대신 line height 줘서 만드는 것도 가능하지만 정확하게 만들기는 margin이 룰이고 좋을 것 같다.*/
+
+.content p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+/*strong과 p의 공간 계산할 때 : 15*1.4-15/2 이렇게 한다~ 정도*/
+
+.product {
+    padding: 30px 0;
+    border-top: 1px solid var(--gc);
+}
+
+.product .container {
+    display: flex;
+    gap: 30px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.product .container .left {
+    flex: 2;
+}
+
+.product .container .right {
+    flex: 1;
+    line-height: 1.4;
+    border-left: 1px solid var(--gc);
+    padding: 0 15px 0 30px;
+
+}
+
+.product .container .left ul {
+    display: flex;
+    gap: 10px;
+}
+
+.product .tel {
+    border-bottom: 1px solid var(--mc);
+    margin: 0 0 15px 0;
+    font-size: 31px;
+    font-weight: 700;
+    line-height: 2;
+}
+
+
+.customer {
+    display: flex;
+}
+
+.customer>div {
+    flex: 1;
+}
+
+.customer .left {
+    text-align: right;
+    background: url(../img/main_banner01.jpg) no-repeat center center/cover;
+}
+
+.customer .right {
+    background: url(../img/main_banner02.jpg) no-repeat center center/cover;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/*연하게 까는 방법 rgba(0, 0, 0, 0.3)*/
+
+.customer>div a {
+    padding: 50px 40px;
+    color: #ddd;
+    display: block;
+    text-shadow: 0 0 3px var(--dc);
+    background: url(../img/pt-bg01.png);
+}
+
+.customer>div a h3 {
+    font-size: 31px;
+    font-weight: 500;
+    margin: 0 0 15px 0;
+}
+
+.customer>div a p {
+    font-size: 13px;
+    font-weight: 300;
+    text-transform: uppercase;
+    /*대문자로 바꿔주는 코드*/
+}
+
+.footer {
+    padding: 30px 0 50px 0;
+    font-size: 13px;
+}
+
+.footer .container {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .logo {
+    flex: 1;
+}
+
+.footer address {
+    flex: 4;
+    font-style: normal;
+    padding: 15px 0 0 0;
+}
+
+.footer address ul {
+    margin: 0 0 5px 0;
+}
+
+.footer address ul li {
+    display: inline-block;
+}
+
+.footer address ul li~li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 11px;
+    background: var(--gc);
+    margin: 0 7px;
 }
