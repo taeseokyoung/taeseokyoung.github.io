@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"');
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
 * {
     margin: 0;
     padding: 0;
@@ -20,9 +23,12 @@ ol {
 body {
     line-height: 1;
     /*중요*/
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 img {
+    /* 2022.05.31. max width를 slick 실습 때 추가 */
+    max-width: 100%;
     vertical-align: middle;
     /* 이미지 사이에 기본 공간까지 초기화 삭제 */
 }
