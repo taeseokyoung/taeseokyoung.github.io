@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다단메뉴 테스트</title>
+    <style>
+        /* 간단한 reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        #header {
+            /* relative 넣으면 차이점이 뭐지? */
+            position: relative;
+            line-height: 100px;
+        }
+
+        .container {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+            justify-content: space-between;
+
+        }
+
+        /* nav>ul 과 nav ul 의 차이점!!! */
+        nav>ul {
+            display: flex;
+            gap: 120px;
+            text-align: center;
+        }
+
+        nav>ul>li ul::before {
+            content: "";
+            position: absolute;
+            top: 100px;
+            left: 0;
+            /* 왜 top left 0 주지? */
+            width: 100%;
+            height: 210px;
+            background: #ff0;
+            z-index: 999;
+            display: none;
+        }
+
+        nav>ul:hover::before {
+            display: block;
+        }
+
+        nav>ul:hover>li ul {
+            display: block;
+        }
+
+        .main_visual {
+            position: relative;
+            height: 500px;
+            background: #333;
+        }
+
+        nav>ul>li {
+            position: relative;
+        }
+
+        nav a {
+            display: block;
+        }
+
+
+        /*  nav>ul:hover>li ul {
+       hover 위치만 바꿔서 다나오게 하는것 만들 수 있다!
+        } */
+
+        nav ul ul {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            background: #ff0;
+            z-index: 999;
+            width: 150px;
+            line-height: 40px;
+            transform: translateX(-30%);
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        wrap-container : kebob case;
+        Wrap : pascal case;
+        wrap_container : snake case;
+        wrapContainer : camel case;
+        Wrap_container-inner : BEM;
+    -->
+    <div class="Wrap">
+        <header id="header">
+            <div class="container">
+                <h1>LOGO</h1>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="">menu01</a>
+                            <!-- 얘네들을 띄워줘야된다. -->
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                                <li><a href="">smenu05</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">menu02</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                                <li><a href="">smenu05</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">menu03</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                                <li><a href="">smenu05</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">menu04</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                                <li><a href="">smenu05</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="main_visual">
+            </div>
+        </main>
+        <footer id="footer">
+            &copy; Tae
+        </footer>
+    </div>
+</body>
+
+</html>
