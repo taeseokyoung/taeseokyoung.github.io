@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hover 연습</title>
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+<style>
+    /* 2022.06.07. Tae hover01 */
+
+    .hover01 {
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .hover01 h2 {
+        font-size: 24px;
+        font-weight: 500;
+        /* 기본 폰트 사이즈의 -배 */
+        letter-spacing: -0.025em;
+        margin: 0 0 10px 0;
+    }
+
+    .hover01 p {
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: -0.025em;
+        margin: 0 0 30px 0;
+    }
+
+    .hover01 .container {
+        display: flex;
+        gap: 30px;
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .hover01 .container figure {
+        position: relative;
+        flex: 1;
+        overflow: hidden;
+    }
+
+    .hover01 img {
+        /* 이미지 크기가 동일하지 않아서 height를 줬다. */
+        height: 220px;
+        max-width: 100%;
+    }
+
+    .hover01 .container figure .box {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(227, 127, 255, 0.8);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: height 0.5s;
+
+    }
+
+    .hover01 .container figure:hover .box {
+        height: 50px;
+    }
+
+    /* 
+    .hover01 .container figure img {
+        transition: transform 0.5s;
+    }
+
+    .hover01 .container figure:hover img {
+        transform: translateX(100px);
+    } */
+
+
+    /* 2022.06.07. Tae MENU */
+
+    nav {
+        border-top: 1px solid rgb(177, 159, 194);
+        border-bottom: 1px solid rgb(177, 159, 194);
+        line-height: 50px;
+        text-align: center;
+    }
+
+    nav>ul {
+        display: flex;
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    nav>ul>li {
+        flex: 1;
+        border-left: 1px solid rgb(177, 159, 194);
+    }
+
+    nav>ul>li:last-child {
+        border-right: 1px solid rgb(177, 159, 194);
+    }
+
+    nav>ul>li a {
+        display: block;
+    }
+
+    nav>ul>li::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: blueviolet;
+    }
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="">MENU1</a></li>
+            <li><a href="">MENU2</a></li>
+            <li><a href="">MENU3</a></li>
+            <li><a href="">MENU4</a></li>
+            <li><a href="">MENU5</a></li>
+        </ul>
+    </nav>
+    <section class="hover01">
+        <h2>
+            나는야 앱등이.. 애플 너무 조아 짜릿해 최고야..!
+        </h2>
+        <p>i want to buy imac and macbookpro and ipad! i want you i got you i love you </p>
+        <div class="container">
+            <figure>
+                <img src="../img/apple01.jpg" alt=""></img>
+                <div class="box">
+                    <a href="">iMac</a>
+                </div>
+            </figure>
+            <figure>
+                <img src="../img/apple2.jpg" alt=""></img>
+                <div class="box">
+                    <a href="">iPad Pro</a>
+                </div>
+            </figure>
+            <figure>
+                <img src="../img/apple3.jpg" alt=""></img>
+                <div class="box">
+                    <a href="">MacBook Pro</a>
+                </div>
+            </figure>
+        </div>
+    </section>
+</body>
+
+</html>
