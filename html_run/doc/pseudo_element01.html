@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상요소 선택자 01</title>
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+<style>
+    section {
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    /* 배경색 교차로 만들 때 nth-child를 편리하게 잡는 방법 even 자식 중 짝수만 odd 자식 중 홀수만 */
+    section:nth-child(even) {
+        background: rgb(250, 250, 191);
+    }
+
+    section h2 {
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        margin: 0 0 10px 0;
+    }
+
+    section p {
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: -0.025em;
+        margin: 0 0 30px 0;
+    }
+
+    section .container {
+        display: flex;
+        gap: 30px;
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    section .container figure {
+        flex: 1;
+    }
+
+    section .container img {
+        max-width: 100%;
+    }
+
+    .psd01 h2::before {
+        content: "앞";
+    }
+
+    .psd01 h2::after {
+        content: "뒤";
+    }
+
+    /* x축 > y축 */
+    .psd02 h2::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 1px;
+        background: #f00;
+        /* 마진 어디 겹쳤지? */
+        margin: 20px auto;
+    }
+
+    /* x축 양쪽 */
+    .psd03 h2::before {
+        content: "";
+        display: inline-block;
+        width: 80px;
+        height: 1px;
+        background: #f00;
+        vertical-align: middle;
+        /* 0 10 0 0 이 박스 가운데 같은 느낌이 안나서 임의로 조정해줌 */
+        margin: -5px 10px 0 0;
+    }
+
+    .psd03 h2::after {
+        content: "";
+        display: inline-block;
+        width: 80px;
+        height: 1px;
+        background: #f00;
+        vertical-align: middle;
+        margin: -5px 0 0 10px;
+    }
+
+
+    .psd04 h2::after {
+        content: "\e907";
+        font-family: xeicon !important;
+
+    }
+
+    /* xe-icon을 before, after에 쓸 때 F12 > contents에 있는 소스를 가져와야 한다 */
+    .psd04 figure::after {
+        content: "\e907";
+        font-family: xeicon !important;
+    }
+
+    .dot_list {
+        width: 300px;
+    }
+
+    .dot_list>li {
+        position: relative;
+        text-align: left;
+        padding: 0 0 0 20px;
+        line-height: 1.2;
+        border-bottom: 1px solid rgb(237, 212, 234);
+    }
+
+    .dot_list>li::before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: 4px;
+        height: 4px;
+        background: blueviolet;
+        border-radius: 50%;
+    }
+
+    .psd05 h2::after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 40px;
+        background: rgb(144, 252, 144);
+        margin: 20px auto;
+        border-radius: 70% 0;
+        transform: rotate(15deg);
+    }
+
+    .psd05 figure:hover::after {
+        transform: rotateX(720deg);
+    }
+
+    .psd05 figure {
+        position: relative;
+    }
+
+    .psd05 figure::after {
+        position: absolute;
+        content: attr(data-num);
+        top: -20px;
+        left: -20px;
+        background: rgb(214, 196, 230);
+        padding: 30px;
+        font-size: 25px;
+        color: #fff;
+        border-radius: 50%;
+        transition: 1s;
+    }
+
+    hr.list_hr {
+        position: relative;
+        /* border가 기본적으로 사방으로 들어가있다 */
+        border: none;
+        border-top: 1px solid rgb(212, 212, 134);
+        margin: 50px 0;
+        overflow: visible;
+    }
+
+    hr.list_hr::after {
+        content: "아하";
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+
+    hr.list_hr::after {
+        content: "\e907";
+        font-family: xeicon !important;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%) rotate(90deg);
+        background: rgb(250, 250, 191);
+        padding: 20px;
+        /* 아이콘도 폰트니까 폰트 크게 만들려고 쓴다. */
+        font-size: 20px;
+        color: rgb(200, 200, 109);
+        border-radius: 50%;
+    }
+</style>
+
+<body>
+    <section class="psd01">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero provident
+            culpa, aut cum omnis odit.</P>
+
+        <div class="container">
+            <figure><img src="../img/lesedilarona01.jpg" alt=""></figure>
+            <figure><img src="../img/lesedilarona02.jpg" alt=""></figure>
+            <figure><img src="../img/lesedilarona03.jpg" alt=""></figure>
+        </div>
+    </section>
+    <section class="psd02">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero provident
+            culpa, aut cum omnis odit.</P>
+
+        <div class="container">
+            <figure><img src="../img/lesedilarona01.jpg" alt=""></figure>
+            <figure><img src="../img/lesedilarona02.jpg" alt=""></figure>
+            <figure><img src="../img/lesedilarona03.jpg" alt=""></figure>
+        </div>
+    </section>
+    <section class="psd03">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero provident
+            culpa, aut cum omnis odit.</P>
+
+        <div class="container">
+            <figure><img src="../img/lesedilarona01.jpg" alt=""></figure>
+            <figure><img src="../img/lesedilarona02.jpg" alt=""></figure>
+            <figure><img src="../img/lesedilarona03.jpg" alt=""></figure>
+        </div>
+    </section>
+    <section class="psd04">
+        <!-- 아이콘은 css에서 가져와서 쓰자 -->
+        <h2><i class="xi-arrow-right">Lorem ipsum dolor sit.</i></h2>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero provident
+            culpa, aut cum omnis odit.</P>
+
+        <div class="container">
+            <ul class="dot_list">
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero
+                    provident</li>
+            </ul>
+        </div>
+    </section>
+    <section class="psd05">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero provident
+            culpa, aut cum omnis odit.</P>
+
+        <div class="container">
+            <figure data-num="01"><img src="../img/lesedilarona01.jpg" alt=""></figure>
+            <figure data-num="02"><img src="../img/lesedilarona02.jpg" alt=""></figure>
+            <figure data-num="03"><img src="../img/lesedilarona03.jpg" alt=""></figure>
+        </div>
+    </section>
+    <section class="psd06">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque nihil nisi maiores libero provident
+            culpa, aut cum omnis odit.</P>
+        <!-- hr태그또한 하나의 박스이다 -->
+        <hr class="list_hr" />
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique saepe quam ratione assumenda iusto
+            molestias incidunt dolores, ut delectus hic nobis non eligendi qui perspiciatis! Magni suscipit aliquam
+            facere velit!
+        </P>
+
+        <div class="container">
+            <figure data-num="01"><img src="../img/lesedilarona01.jpg" alt=""></figure>
+            <figure data-num="02"><img src="../img/lesedilarona02.jpg" alt=""></figure>
+            <figure data-num="03"><img src="../img/lesedilarona03.jpg" alt=""></figure>
+        </div>
+    </section>
+</body>
+
+</html>
