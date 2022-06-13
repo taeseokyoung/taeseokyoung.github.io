@@ -118,7 +118,7 @@ img {
 .main .slick-arrow {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 0;
     z-index: 1;
 
     font-size: 0;
@@ -137,13 +137,14 @@ img {
     transition: 0.5s;
 }
 
+/* x값이 의미가 없는 상황 */
 .main .slick-prev {
     left: 100px;
-    transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(0, -50%) rotate(-45deg);
 }
 
 .main .slick-next {
     left: auto;
     right: 100px;
-    transform: translate(-50%, -50%) rotate(135deg);
+    transform: translate(0, -50%) rotate(135deg);
 }
