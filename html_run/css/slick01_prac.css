@@ -1,0 +1,149 @@
+img {
+    max-width: 100%;
+}
+
+.visual_slider figure {
+    height: 600px;
+}
+
+
+.visual_slider .itm01 {
+    background: url(../img/mainvisual01.jpg) no-repeat center center/cover;
+}
+
+.visual_slider .itm02 {
+    background: url(../img/mainvisual02.jpg) no-repeat center center/cover;
+}
+
+.visual_slider .itm03 {
+    background: url(../img/mainvisual03.jpg) no-repeat center center/cover;
+}
+
+.first_slider {
+    position: relative;
+}
+
+.first_slider .wheel {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 25px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-size: 0;
+}
+
+.first_slider .wheel span {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 2px;
+    height: 8px;
+    background: #fff;
+    border-radius: 0.2px;
+    animation: wheel 0.4s infinite;
+}
+
+@keyframes wheel {
+    to {
+        top: 10px;
+    }
+}
+
+.main {
+    position: relative;
+}
+
+.main .slogan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 글자 자체가 박스일 때는 글자를 중심으로 중앙에 왔고
+    width를 줬을 때는 그 박스의 중심으로 정렬이 됨.
+    글자에는 정렬을 주지 않았기 때문에 기본값이 된다. */
+    width: 1200px;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+}
+
+.main .slick-dots {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.main .slick-dots li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #333;
+    margin: 0 10px;
+    border-radius: 50%;
+
+}
+
+.main .slick-dots li button {
+    display: none;
+}
+
+.main .slick-dots li:hover::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(255, 68, 0);
+}
+
+.main .slick-dots li.slick-active::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(255, 68, 0);
+}
+
+/* 블록(display: block)으로 가상 요소의 표시 타입을 변경하는 것이 중요합니다. 블록 타입으로 가상 요소의 타입이 변경되면 콘텐츠 영역 너비를 모두 차지하면서 타이틀 콘텐츠 위와 아래에 가상 요소가 배치되는 특징을 이용한 것입니다. */
+
+
+.main .slick-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+
+    font-size: 0;
+    border: none;
+    background: transparent;
+
+    width: 120px;
+    height: 120px;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    opacity: 0.3;
+}
+
+.main .slick-arrow:hover {
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.main .slick-prev {
+    left: 100px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.main .slick-next {
+    left: auto;
+    right: 100px;
+    transform: translate(-50%, -50%) rotate(135deg);
+}
