@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭메뉴 만들기2</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/slick.css">
+    <style>
+        img {
+            max-width: 100%;
+        }
+
+        .tab {
+            padding: 100px 0;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tab_menu {
+            display: flex;
+        }
+
+        .tab_menu>li {
+            flex: 1;
+        }
+
+        .tab_menu>li.on a {
+            background: rgb(252, 143, 182);
+            color: #fff;
+        }
+
+        /* 메뉴 만들때는 자식 선택자로 잡아주기 */
+        .tab_menu>li>a {
+            /* 클릭 공간 잡아주기 위해서  */
+            display: block;
+            line-height: 40px;
+            padding: 0 15px;
+            background: rgb(255, 233, 245);
+        }
+
+        .tab_menu>li~li {
+            border-left:
+                2px solid #fff;
+        }
+
+        .tab_content {
+            position: relative;
+        }
+
+        .tab_content>li {
+            position: absolute;
+            inset: 0 0 0 0;
+            visibility: hidden;
+            padding: 10px;
+        }
+
+        .tab_content>li.on {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="tab">
+        <div class="container">
+            <ul class="tab_menu">
+                <li><a href="">menu01</a></li>
+                <li><a href="">menu02</a></li>
+                <li><a href="">menu03</a></li>
+            </ul>
+            <ul class="tab_content">
+                <li class="on">
+                    <div class="product_slider">
+                        <figure>
+                            <img src="../img/lesedilarona01.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona02.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona03.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona04.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona05.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona06.jpg" alt="">
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <div class="product_slider">
+                        <figure>
+                            <img src="../img/lesedilarona01.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona02.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona03.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona04.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona05.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona06.jpg" alt="">
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <div class="product_slider">
+                        <figure>
+                            <img src="../img/lesedilarona01.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona02.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona03.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona04.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona05.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona06.jpg" alt="">
+                        </figure>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/slick.min.js"></script>
+    <script>
+        // 왜 이번시간에는 class on 을 먼저 주고 시작하셨을까?
+        $(function () {
+
+            $('.tab_menu>li>a').on('click', function (e) {
+                e.preventDefault();
+                // console.log($(this).parent().index());
+                var idx = $(this).parent().index();
+
+                $('.tab_content>li').removeClass('on');
+                $('.tab_content>li').eq(idx).addClass('on');
+                $('.tab_menu>li').removeClass('on');
+                $(this).parent().addClass('on');
+
+            })
+
+            $('.product_slider').slick({
+                slidesToShow: 5,
+            });
+
+        })
+    </script>
+</body>
+
+</html>
