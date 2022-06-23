@@ -1,0 +1,110 @@
+img {
+    max-width: 100%;
+}
+
+.Wrap {}
+
+/* 2022.06.21 tae topBanner */
+.topBanner {
+    padding: 20px 0;
+    background: #f1f1f1;
+
+}
+
+.topBanner .inner {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+    letter-spacing: -0.025em;
+}
+
+.topBanner h2 {
+    margin: 0 0 15px 0;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* .inner p:nth-child(2) */
+.topBanner .inner_notice p:nth-of-type(1) {
+    margin: 0 0 10px 0;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+/* .inner p:nth-child(3) */
+.topBanner .inner_notice p:nth-of-type(2) {
+    margin: 0 0 10px 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #f00;
+}
+
+.topBanner .inner_button {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    text-align: right;
+}
+
+.topBanner .inner_button input {
+    vertical-align: middle;
+}
+
+.topBanner .inner_button span {
+
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.topBanner .inner_button i {
+    font-size: 30px;
+}
+
+/* 2022.06.21 tae header */
+
+#header {}
+
+
+.globalTab {
+    display: flex;
+    line-height: 50px;
+    background: #333;
+    color: #ddd;
+
+}
+
+.globalTab a {
+    margin: 0 80px;
+    display: block;
+}
+
+#header .headerTab {
+    display: flex;
+    line-height: 80px;
+    justify-content: space-between;
+    width: 1200px;
+
+}
+
+#header h1 {
+    width: 85px;
+    height: 44px;
+}
+
+#header .headerArea {
+    display: flex;
+
+    font-size: 13px;
+    font-weight: 300;
+    gap: 40px;
+
+}
+
+#header .headerArea a {
+    display: block;
+    gap: 40px;
+
+}
+
+#header nav {}
