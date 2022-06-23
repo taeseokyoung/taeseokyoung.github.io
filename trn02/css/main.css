@@ -480,7 +480,7 @@ img {
 .fixedBg2 {
     padding: 100px 0;
     /* 마진 추가 */
-    margin: 0 0 100vh 0;
+    margin: 0 0 50vh 0;
     text-align: center;
     color: #fff;
     background: url(../img/mainvisual03.jpg) no-repeat fixed center center/cover;
