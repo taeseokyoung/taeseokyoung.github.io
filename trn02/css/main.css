@@ -843,3 +843,81 @@ img {
     cursor: pointer;
 
 }
+
+/* 2022.06.24. tae footer */
+
+#footer {
+    background: #333;
+    color: #fff;
+    line-height: 80px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+#footer .top dt,
+#footer .top dd {
+    display: inline-block;
+    /* padding: 0 15px 0 15px;*/
+}
+
+#footer .top dt {
+    font-weight: 500;
+}
+
+#footer .top {
+    border: 1px solid #555;
+}
+
+#footer .top dt::before,
+#footer .top dd~dd::before {
+    content: "";
+    display: inline-block;
+    /* padding이 안먹어서 빼고 여기 마진을 줬다. */
+    margin: 0 15px;
+    width: 1px;
+    /* (footer에) 위에 정해놓은 사이즈보다 작아야한다. */
+    height: 13px;
+    background: #666;
+}
+
+/* 앞글씨가 들여쓰기 되어서 바꿔줬는데!! 마진 주면서 없앴다. */
+#footer .top dd:nth-child(1) {
+    /* padding: 0 15px 0 0; */
+    /* padding left none 해도됨*/
+}
+
+#footer .top a {
+    /* display: block; a에 손가락이 꽉찰 필요가 있을까?*/
+}
+
+#footer .top i {
+    font-size: 25px;
+}
+
+#footer .container {
+    justify-content: space-between;
+}
+
+#footer .bottom address {
+    /* 얘는 보통 리셋에 잡혀있다. */
+    font-style: normal;
+}
+
+#footer .bottom address a {
+    margin: 0 px 0 0;
+}
+
+/* 디자인은 https://jqueryui.com/selectmenu/ */
+#footer .bottom select {
+    background: transparent;
+    color: #ddd;
+    padding: 0 15px;
+    border: 1px solid #555;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#footer .bottom option {
+    color: #fff;
+    background: #333;
+}
