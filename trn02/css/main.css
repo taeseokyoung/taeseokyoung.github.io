@@ -898,6 +898,10 @@ img {
     justify-content: space-between;
 }
 
+#footer .top .sns>a~a {
+    margin: 0 0 0 10px;
+}
+
 #footer .bottom address {
     /* 얘는 보통 리셋에 잡혀있다. */
     font-style: normal;
