@@ -90,7 +90,7 @@ $(function () {
     // event.target 이벤트타겟(항상 가장 아래에 있는 것) .tab_menu li 커런트타겟
     // index, event, 이벤트 위임, select toggle(참과 거짓)
 
-    var ux = "떠경"
+    // var ux = "떠경"
 
     $('.tab_content .notice li').on('click', function (event) {
         event.preventDefault();
@@ -129,6 +129,19 @@ $(window).on('scroll', function () {
     // else {
     //     console.log('드가랏')
     // }
+
+    $('#fl').on('change', function () {
+        console.log($(this), $(this).val())
+        var lnk = $(this).val();
+        // lnk && window.open(lnk) - 리액트에서 쓸거야
+        // if문 뒤에 {} 생략해두되네?
+        if (lnk) { window.open(lnk); }
+
+
+    })
+
+
+
 
 })
 
