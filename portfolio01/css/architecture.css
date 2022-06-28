@@ -159,6 +159,7 @@ img {
 
 
 #main .businessSlider {
+    padding: 0 0 100px 0;
     position: relative;
     width: 100%;
     margin: 0 auto;
@@ -232,4 +233,30 @@ img {
 
 .businessSlider figure img:nth-of-type(2) {
     display: none;
+}
+
+.villiv_banner {
+    margin: 0 auto;
+    position: relative;
+    width: 1200px;
+}
+
+.villiv_banner .villiv_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.villiv_banner h3 {
+    width: 150px;
+    margin: 0 auto 30px auto;
+}
+
+
+.villiv_banner p {
+    font-size: 17px;
+    font-weight: 300;
+    color: #fff;
+    margin: 0 auto;
 }
