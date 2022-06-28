@@ -1,3 +1,5 @@
+/* 22.06.26.~ tae 첫번째. 건축 홈페이지*/
+
 /* * {
     outline: 1px solid #f00;
 } */
@@ -109,6 +111,7 @@ img {
     background: url(../img/visual04.jpg) no-repeat center center/cover;
 }
 
+/* 22.06.28.scrollme */
 #main .scrollMe {
     padding: 100px 0;
     width: 1200px;
@@ -126,6 +129,7 @@ img {
     font-weight: 500;
     padding: 0 0 10px 0;
 }
+
 
 .scrollMe .scrollme {
     display: flex;
@@ -157,7 +161,7 @@ img {
     font-weight: 300;
 }
 
-
+/* 22.06.27. tae top slider */
 #main .businessSlider {
     padding: 0 0 100px 0;
     position: relative;
@@ -217,10 +221,12 @@ img {
 
 .businessSlider figure.slick-current img:nth-of-type(1) {
     display: none;
+    filter: grayscale(1);
 }
 
 .businessSlider figure.slick-current img:nth-of-type(2) {
     display: block;
+    filter: grayscale(0);
 }
 
 .businessSlider figure .box {
@@ -229,13 +235,46 @@ img {
 
 .businessSlider figure img:nth-of-type(1) {
     display: block;
+    filter: grayscale(1);
 }
 
 .businessSlider figure img:nth-of-type(2) {
     display: none;
+    filter: grayscale(0);
 }
 
+.slide_arrows>i {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-45%, -50%);
+    color: rgba(255, 255, 255, 0.5);
+    /* color: #111; */
+    font-size: 40px;
+
+}
+
+.slide_arrows>i:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.slide_arrows>i:nth-child(1) {
+    margin: 0 0 0 -700px;
+}
+
+.slide_arrows>i:nth-child(2) {
+    margin: 0 0 0 700px;
+}
+
+.slide_arrows>i.on {
+    color: #fff;
+}
+
+/* 22.06.27. tae villiv_banner */
+
 .villiv_banner {
+    padding: 0 0 100px 0;
     margin: 0 auto;
     position: relative;
     width: 1200px;
@@ -259,4 +298,67 @@ img {
     font-weight: 300;
     color: #fff;
     margin: 0 auto;
+}
+
+/* 22.06.28. tae bottom */
+.bottom {
+    padding: 100px 0;
+}
+
+.bottom .container {
+    padding: 30px;
+    width: 1200px;
+    margin: 0 auto;
+    background: #ddd;
+
+}
+
+.bottom .news_title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom .news_title h4 {
+    font-size: 31px;
+    font-weight: 500;
+    margin: 0 0 30px 0;
+}
+
+.bottom .news_title p {
+    font-size: 13px;
+    font-weight: 300;
+    /* text-align: center; */
+    /* vertical-align: middle; */
+    line-height: 31px;
+
+}
+
+.bottom .news_txt {
+    display: flex;
+}
+
+.bottom .news_txt .txt~.txt {
+    padding: 0 15px;
+}
+
+
+
+.bottom .news_txt h5 {
+    font-size: 19px;
+    font-weight: 300;
+    margin: 0 0 10px 0;
+}
+
+.bottom .news_txt p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.bottom .news_txt .txt~.txt::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 50px;
+    background: #000;
 }
