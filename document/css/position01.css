@@ -1,0 +1,17 @@
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*여기까지 4개는 중간에 오는 팝업 공식으로 외워두기 */
+    width: 450px;
+    height: 350px;
+    background: #f00;
+}
+
+
+.popup button {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}

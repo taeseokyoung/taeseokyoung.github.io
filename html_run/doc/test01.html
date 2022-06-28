@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다단메뉴 테스트</title>
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .main_visual {
+        position: relative;
+        height: 500px;
+        background: #333;
+    }
+
+    #header {
+        line-height: 100px;
+    }
+
+    #header .container {
+        display: flex;
+        width: 1200px;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+
+    nav>ul {
+        display: flex;
+        gap: 120px;
+        text-align: center;
+    }
+
+    /* 가상요소 */
+    nav>ul::before {
+        content: "";
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: #ff0;
+        z-index: 999;
+    }
+
+    nav>ul>li {
+        position: relative;
+    }
+
+    nav ul>li ul {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        background: #ff0;
+        z-index: 999;
+        width: 150px;
+        height: 0;
+        line-height: 40px;
+        /* 메뉴 5개 * 40px = 200 before에 적용 */
+        transform: translateX(-30%);
+        /* 높이를 0으로 줬을 때 공간은 사라지고 인라인 요소 ex. 글, 그림, input 은 공긴 없어져도 넘치려는 경향이 있다. - overflow hidden 해준다. */
+        overflow: hidden;
+    }
+
+    /* voerflow hidden주기 전에 height 0을 주니까 배경색만 없어졌다 */
+
+    nav ul:hover>li ul {
+        height: 200px;
+        transition: 1.0s;
+    }
+
+    nav>ul:hover::before {
+        height: 210px;
+        transition: 1.0s;
+    }
+
+    nav a {
+        display: block;
+    }
+</style>
+
+<body>
+    <!-- 
+        wrap-container : kebob case;
+        Wrap : pascal case;
+        wrap_container : snake case;
+        wrapContainer : camel case;
+        Wrap_container-inner : BEM;
+    -->
+    <div class="Wrap">
+        <header id="header">
+            <div class="container">
+                <h1>LOGO</h1>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="">menu01</a>
+                            <!-- 얘네들을 띄워줘야된다. -->
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                                <li><a href="">smenu05</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">menu02</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                                <li><a href="">smenu05</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">menu03</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                                <li><a href="">smenu05</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">menu04</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                                <li><a href="">smenu05</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="main_visual">
+            </div>
+        </main>
+        <footer id="footer">
+            &copy; Tae
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+#header {
+    line-height: 100px;
+    border-bottom: 1px solid #ddd;
+}
+
+#header .container {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 메뉴>자식 잡아주자! */
+#header .gnb>ul {
+    display: flex;
+    /* gap: 40px; */
+}
+
+#header .gnb>ul a {
+    display: block;
+    padding: 0 20px;
+}
+
+#main {
+    position: relative;
+}
+
+.main_visual {
+    position: relative;
+}
+
+/* 높이를 써야할곳은 딱 두곳
+배경깔았을 때
+absolute 띄웠을때
+padding줘야한다! */
+
+.main_slider figure {
+    /* 각각의 figure에 기준을 잡아줬다 */
+    position: relative;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.main_slider .itm01 {
+    background-image: url(../img/mainvisual01.jpg);
+}
+
+.main_slider .itm02 {
+    background-image: url(../img/mainvisual02.jpg);
+}
+
+.main_slider .itm03 {
+    background-image: url(../img/mainvisual03.jpg);
+}
+
+/* 반응형슬라이드에서 백그라운드이미지 깔기 
+지금까지는 on을 각각의 itm에 걸어줬었는데 길어지니까(처음것+on 붙인거 총 6개가됨) background의 다른 설정을 figure로 빼줬다 */
+
+
+.main_slider .inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    color: #fff;
+    /* 어차피흐려지니까 생껌은색 사용하는게 깔끔 */
+    text-shadow: 0 0 3px #000;
+}
+
+.main_slider figure .inner h2 {
+    font-size: 35px;
+    font-weight: 700;
+    /* 모든 영문 대문자로 */
+    text-transform: uppercase;
+    /* 글자사이는 마진 */
+    margin: 0 0 10px 0;
+    /* transform은 자기자신만 변형, 부모를변형시키지 않아서 쓴다 */
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+
+/* 2. 슬라이드가 만들어졌을 때 이름을 붙인다. afterchange되었을 때 붙인다. */
+
+.main_slider figure.on .inner h2 {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.7s;
+
+}
+
+
+.main_slider figure .inner p {
+    font-size: 15px;
+    font-weight: 300;
+    /* 글자사이는 마진 */
+    margin: 0 0 20px 0;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_slider figure.on .inner p {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.7s 0.7s;
+
+}
+
+.main_slider figure .inner a {
+    /* display: block; 글자가 커지면 늘어나지가 않는다 */
+    display: inline-block;
+    /* width: 100px; 늘어날거기때문에 빼준다.*/
+    background: #333;
+    /* 박스 가운데에 문자가 오지 않는 느낌 padding: 5px 15px 9px 15px; 아래로 좀 더 조절하는 수밖에 없다. */
+    padding: 5px 15px 9px 15px;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_slider figure.on .inner a {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.7s 1.4s;
+}
+
+/* 애니메이션 : 레이아웃을 깨지 않고 만든다. 자기자신을 움직인다고 생각하자! */
+
+/* 슬릭슬라이더에서의 선택자가 바뀌는 모습 확인했다.(그림 캡쳐해둠) */
+
+/* 자바스크립트에서 꼬일 때 이렇게 작업한다 1. 이름이 이미 붙어있는 상황에서 애니메이션이 적용되므로 첫째화면에서 안나온다 */
+/* .main_slider figure.slick-current h2 {
+    color: aquamarine;
+    transition: 2s;
+    컬러값도 있으니까 애니메이션이 된다.
+} */
+
+
+/* dot 외부에서 점, 아이콘, 목록 만들어서 하기 */
+/* 백그라운드 반복 */
+
+.main_visual .num {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    /* transform은 자기자신만 가르킨다 */
+    transform: translateX(-100%);
+    width: 100px;
+    height: 100px;
+    background-image: url(../img/num01.png);
+    background-position-y: -500px;
+    margin: 0 0 0 600px;
+    transition: 0.3s;
+}
+
+.main_visual .custom_dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    background: #ddd;
+    display: flex;
+}
+
+.main_visual .custom_dots li {
+    position: relative;
+    flex: 1;
+}
+
+.main_visual .custom_dots li~li {
+    border-left: 1px solid #fff;
+}
+
+.main_visual .custom_dots li a {
+    position: relative;
+    display: block;
+    padding: 10px;
+}
+
+.main_visual .custom_dots li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #f00;
+}
+
+/* .main_visual .custom_dots li.on {
+    background: #f00;
+    color: #fff;
+} */
+
+
+.main_visual .custom_dots li.on::before {
+    width: 100%;
+    transition: 2s;
+}
+
+
+/* 22.06.15. 여기서부터 내가만든 css */
+
+.main_visual .custom_arrows {
+    position: absolute;
+    justify-content: space-between;
+    bottom: 70px;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    display: flex;
+
+
+}
+
+.main_visual .custom_play {
+    position: absolute;
+    justify-content: space-between;
+    bottom: 70px;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    display: flex;
+
+
+}

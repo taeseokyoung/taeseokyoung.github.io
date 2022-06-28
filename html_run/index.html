@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- 설정 메트리스 포스트 -->
+    <meta charset="UTF-8"><!-- 어디서든 폰트를 보여주게 한다 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 인터넷익스플로러 들어왓을 때 엣지를 써라 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 뷰포트, 반응형되어라 -->
+    <title>BASIC</title> <!-- 파비콘 옆에 검색했을 때 이름 나오는 부분 중요해!! -->
+
+</head>
+<style>
+    .pho01 {
+        display: flex;
+    }
+</style>
+
+<body>
+    <!-- 태그들이 나오는 곳 -->
+    <!-- 진지하게 정리하기 -->
+    <h1>HTML/CSS BASIC</h1>
+    <hr />
+    <h2>기본 박스 : box-model</h2>
+
+    <li>
+        <a href="./doc/box01.html">기본 박스 01</a>
+        <p>기본적인 박스의 성질에 대한 이해; width height padding margin</p>
+        <p>block 속성과 inline 속성</p>
+        <p>외부/내부 스타일 시트, 인라인 스타일</p>
+    </li>
+    <br />
+    <li>
+        <a href="./doc/box02.html">기본 박스 02</a>
+        <p>css 선택자에 대한 이해</p>
+        <p>css는 계급이 정확해서 부모를 선택할 수 없다. (역행할 수 없고 무조건 아래를 선택)</p>
+        <p><span style="background: #0f0;">뒤에 오는 것은 앞의 내용을 덮어쓴다.</span></p>
+        <p>important > inline style의 속성 > id > class</p>
+        <ol>
+            <li> * : (body까지 포함하는) 모든 선택자</li>
+            <li> 공간 : tag 선택자와 후손 선택자</li>
+            <li> ~ : (나를 제외한) 형제선택자. 붙여쓰기!</li>
+            <li> + : (내 아래의) 인접형제선택자. 붙여쓰기!</li>
+            <li> [class=""], [class*=""] : attribute 선택자</li>
+            <li> , : 그리고 (따옴표 안에 각각의 위치를 정확하게 적는다.)</li>
+            <li> nth-child(-) : -번째자식 / nth-of-type(-) : 같은 태그중에 -번</li>
+        </ol>
+
+    </li>
+    </ul>
+    <br />
+    <h3>실습 1 : 다단메뉴 multi-column</h3>
+    <ul>
+        <li>
+            <a href="./doc/test01.html">test 01</a>
+            <p>hover의 위치를 변경하여 il가 각각 또는 한번에 나오는 2가지 방법의 다단메뉴를 실습했다.</p>
+            <p>ul>li>ul>li 같은 이름이 반복될 때 <span style="background: #0f0;">ul(자식 선택) 과 nav ul(자손 선택)의 차이가 중요하다.</span></p>
+            <p>네이밍 규칙 : Case Styles<br>
+                wrap-container : kebab case; <span style="background: #0f0;">원칙</span><br>
+                Wrap : pascal case;<br>
+                wrap_container : snake case;<br>
+                wrapContainer : camel case;<br>
+                Wrap_container-inner : BEM;</p>
+        </li>
+        <br />
+        <li>
+            <a href="./doc/multi_menu01.html">multi_menu 01</a>
+            <p>상단 우측에 다단메뉴를 만들었다.</p>
+            <p>inset 태그로 top right bottom left 좌표를 줬다.</p>
+            <p>::before, ::after는 리셋에 있는 box-sizing:border-box; 이 먹히지 않았다.</p>
+        </li>
+        <br />
+        <li>
+            <a href="./doc/multi_menu02.html">multi_menu 02</a>
+            <p>menu 01에 애니메이션 효과를 줬다.</p>
+            <p>박스를 안보이게하는 방법</p>
+            <ol>
+                <li>opacity:0;</li>
+                <li>visibility:hidden;</li>
+                <li>display:none;</li>
+                <li>높이값 변경</li>
+            </ol>
+            <p>display(none, block), animate, visibility는 애니메이션 적용할 수 없다.</p>
+            <em>2022. 06. 03.</em>
+        </li>
+        <br />
+        <li>
+            <a href="./doc/multi_menu03.html">multi_menu 03</a>
+            <p>반응형 다단메뉴를 만들었다.</p>
+            <em>2022. 06. 10.</em>
+        </li>
+    </ul>
+    <h2>Display</h2>
+    <ul>
+        <li>
+            <a href="./doc/display01.html">display 01</a>
+            <p>기본적인 박스의 성질에 대한 이해; width height padding margin</p>
+            <p>block 속성과 inline 속성</p>
+            <p>외부/내부 스타일 시트, 인라인 스타일</p>
+            <em>2022. 06. 07.</em>
+        </li>
+    </ul>
+    <br />
+    <h2>Position</h2>
+    <ul>
+        <li>
+            <a href="./doc/position01.html">position 01</a>
+            <p>position 속성에 대한 이해; relative, absolute, fixed, sticky</p>
+        </li>
+        <li>
+            <a href="./doc/position02.html">position 02</a>
+            <p>position: sticky에 대한 이해</p>
+            <p>display: flex로 글과 그림까지 넣어보다가 실습작업물을 만들어보게 되었다.</p>
+        </li>
+        <li>
+            <a href="./doc/position03.html">Display, Position 을 활용한 홈페이지 제작</a>
+            <p>position: sticky 속성이 돋보이는 웹페이지</p>
+            <p>flex-direction, align-items, inset, z-index, flex: 1;(0 0 50%)에 대해서 정리해봐야겠다.</p>
+        </li>
+        <li>
+            <a href="./doc/hover01.html">hover와 함께 position 이해하기</a>
+            <p>hover - ::before, after를 활용하여 position에 대해 공부했다.</p>
+            <em>2022. 06. 07.</em>
+        </li>
+    </ul>
+    <br />
+    <h2>가상요소 선택자 ::before, ::after</h2>
+    <ul>
+        <li>
+            <a href="./doc/pseudo_element01.html">가상요소 선택자 01</a>
+            <p>1. before, after 선택자의 기본 위치와 특징</p>
+            <p>2. after 선택자를 활용하여 제목과 설명 사이에 작은 그리드를 만들었다.</p>
+            <p>3. after 선택자를 활용하여 제목 양옆에 그리드를 만들었다. </p>
+            <p>4. 웹 아이콘 : 개발자 도구 > contents탭 > 코드(소스) 가져와야 한다. / 직접 만든 아이콘(도트)을 넣었다. </p>
+            <p>5. 선 위에 아이콘을 위치하여 아이콘의 뒷배경만큼 선이 자연스럽게 가려지는 효과를 주었다. </p>
+            <em>2022. 06. 08.</em>
+        </li>
+    </ul>
+    <br />
+    <h2>Psd to Html</h2>
+    <ul>
+        <li>
+            <a href="./doc/psdtohtml01.html">psd to html 01</a>
+            <p>포토샵에서 그리드시스템으로 시안을 잡고, 똑같이 구현해봤다.</p>
+            <em>2022. 06. 08.</em>
+        </li>
+        <br />
+        <li>
+            <a href="./doc/psdtohtml02.html">psd to html 02</a>
+            <p>포토샵 그리드시스템 2번째 수업.</p>
+
+            <div class="pho01">
+                <figure>
+                    <img src="./img/graff_photoshop02.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="./img/graff_photoshop01.jpg" alt="">
+                </figure>
+            </div>
+            <em>2022. 06. 09.</em>
+        </li>
+    </ul>
+    <br />
+    <h2>홈페이지 Header</h2>
+    <ul>
+        <li>
+            <a href="./doc/header01.html.html">header 01 - 가로배치</a>
+            <p>display: flex;와 justify-content: space-between;으로 header 가로배치.</p>
+        </li>
+        <br />
+        <li>
+            <a href="./doc/header02.html.html">header 02 - 가로배치와 아이콘</a>
+            <p>menu 요소에 display: block; 적용, 아이콘과 함께 가로배치.</p>
+        </li>
+        <br />
+        <li>
+            <a href="./doc/header03.html.html">header 03 - 메뉴가 중앙에 오도록 가로배치</a>
+            <p>아이콘에 로고와 동일한 width 값을 적용. 차지하는 영역을 같게 만들어 준 후 justify-content: space-between; 로 배치.</p>
+        </li>
+        <br />
+        <li>
+            <a href="./doc/header04.html.html">header 04 - 메뉴가 중앙에 오도록 가로배치 2</a>
+            <p> justify-content: space-between; 만 줬을 때 메뉴가 중앙에 오지 않는 모습.</p>
+        </li>
+        <br />
+        <li>
+            <a href="./doc/header05.html.html">header 05 - 로고 기준으로 메뉴를 좌우에 배치</a>
+            <p>justify-content: flex-end;로 양쪽 메뉴의 수가 다르더라도 정렬될 수 있도록 만들었다. </p>
+        </li>
+        <div class="pho01">
+            <figure>
+                <img src="./img/header03.jpg" alt="">
+            </figure>
+            <figure>
+                <img src="./img/header04.jpg" alt="">
+            </figure>
+            <figure>
+                <img src="./img/header05.jpg" alt="">
+            </figure>
+        </div>
+        <em>2022. 06. 09.</em>
+    </ul>
+    <br />
+    <h2>Slick</h2>
+    <ul>
+        <li>
+            <a href="./doc/slick01.html">slick 01 - slick 기본</a>
+            <p>수업 후 연습 : <a href="./doc/slick01_prac.html"> slick 01 prac </a></p>
+            <p>1. 기본 슬라이드 배너</p>
+            <p>2. slidesToShow 옵션을 준 제품 슬라이드 배너</p>
+            <p>3. background image, f12 활용한 다양한 배너 효과</p>
+            <em>2022. 06. 13.</em>
+        </li>
+        <br />
+        <li>
+            <a href="./doc/slick02.html">slick 02 - 현대엘리베이터 배너 실습</a>
+            <p>수업 후 연습(다 못했어요ㅠㅠ) : <a href="./doc/slick02_prac.html"> slick 02 prac </a></p>
+            <p>.addClass와 slick의 Event인 afterChange를 이용한 배너를 jQuery로 만들었다.</p>
+            <em>2022. 06. 14.</em>
+        </li>
+        <br />
+        <li>
+            <a href="./doc/slick03.html">slick 03 - main visual slide</a>
+            <p>수업 후 나머지 아이콘 배치하면서 좌표를 어떻게 줘야할지 모르겠다.</p>
+            <p>슬라이드에 여러가지 꾸밈요소 만들어보기</p>
+            <em>2022. 06. 15.</em>
+        </li>
+
+    </ul>
+</body>
+
+</html>

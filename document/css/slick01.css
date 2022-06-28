@@ -1,0 +1,153 @@
+.main_visual {}
+
+.main_visual .main_slider {}
+
+.main_visual .main_slider figure {
+    position: relative;
+    height: 600px;
+}
+
+.main_visual .main_slider .itm01 {
+    background: url(../img/mainvisual01.jpg) no-repeat top center/cover;
+    /* 박스를 꽉 채워라, 이미지 반복하지 마, 센터로 가 */
+}
+
+.main_visual .main_slider .itm02 {
+    background: url(../img/mainvisual02.jpg) no-repeat center center/cover;
+}
+
+.main_visual .main_slider .itm03 {
+    background: url(../img/mainvisual03.jpg) no-repeat center center/cover;
+}
+
+.main_visual .main_slider .slick-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    /* 버튼의 크기, 버튼 모양 없애고 화살표 만들기  */
+    width: 100px;
+    height: 100px;
+    font-size: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
+}
+
+.main_visual .main_slider .slick-prev {
+    margin: 0 0 0 -700px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.main_visual .main_slider .slick-next {
+    margin: 0 0 0 700px;
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.main_visual .main_slider .slick-dots {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 하단 중앙 버튼 만들기 */
+.main_visual .main_slider .slick-dots li {
+    display: inline-block;
+    /* 인라인은 사이가 띄워지는 기본 속성이 있지만 슬릭쓸때 안그렇다 */
+    width: 80px;
+    height: 5px;
+    background: #333;
+    margin: 0 3px;
+}
+
+.main_visual .main_slider .slick-dots li.slick-active {
+    background: #f00;
+}
+
+.main_visual .main_slider .slick-dots button {
+    display: none;
+}
+
+/* 여기부턴 글자 */
+
+.main_visual .main_slider .inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+}
+
+/* position absolute를 처음 줬을 때 기준이 없어서 마지막장에 한꺼번에 겹쳐있었다. 그래서 figure에 position relative를 줘서 각 그림에 기준을 주고 찾아가도록 했다 */
+
+.main_visual .main_slider .inner h3 {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+
+.main_visual .main_slider .inner p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 20px 0;
+    line-height: 1.4;
+}
+
+.main_visual .main_slider .inner a {
+    display: inline-block;
+    padding: 5px 30px 8px 30px;
+    /* 사이즈를 특정할 수 없는 버튼이라서 inline-block */
+    /* 8px 30px 추가해서 more 글을 중앙으로 */
+    background: #333;
+    border: 1px solid #fff;
+}
+
+.main_visual .main_slider figure h3 {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_visual .main_slider figure.xx h3 {
+    transform: translateY(0px);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.main_visual .main_slider figure p {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_visual .main_slider figure.xx p {
+    transform: translateY(0px);
+    opacity: 1;
+    transition: 0.5s 0.5s;
+}
+
+.main_visual .main_slider figure a {
+    transform: translateY(100px);
+    border-radius: 10%;
+    opacity: 0;
+
+
+}
+
+.main_visual .main_slider figure.xx a {
+    transform: translateY(0px);
+    border-radius: 50%;
+    opacity: 1;
+    transition: opacity 0.5s 1s, transform 0.5s 1s, border-radius 1s 1s;
+    /* transition 축약형 - 대상 기능(얼마나) 딜레이 */
+}
+
+.main_visual .main_slider .inner a:hover {
+    background: #fff;
+    color: #333;
+    border: #333;
+    transition: none;
+}

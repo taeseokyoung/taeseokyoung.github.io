@@ -1,0 +1,359 @@
+:root {
+    --mc: #dc3545;
+    --gc: #dddddd;
+    --wc: #f8f9fa;
+    --dc: #000000;
+}
+
+/* '변수' 담아두고 쓴다 --> ie 사용 불가능 */
+
+html {
+    font-size: 20px;
+}
+
+/* 기본폰트사이즈 */
+
+body {
+    font-size: 0.8rem;
+}
+
+/* 기본폰트사이즈 16px */
+
+.wrap {}
+
+.top_banner {
+    border-top: 2px solid var(--mc);
+    border-bottom: 1px solid var(--gc);
+    font-size: 0.65rem;
+    line-height: 1.5rem;
+}
+
+.top_banner .container {
+    display: flex;
+    justify-content: flex-end;
+    width: 60rem;
+    margin: 0 auto;
+}
+
+
+.top_banner li {
+    border-right: 1px solid #ddd;
+    padding: 0 0.5rem;
+}
+
+.header {
+    line-height: 5rem;
+}
+
+
+.header .container {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header h1 img {
+    width: 300px;
+}
+
+.header nav {
+    margin: 0 0 0 auto;
+}
+
+.header nav>ul {
+    display: flex;
+    gap: 2rem;
+    /*1.5rem : 30px*/
+
+}
+
+/* nav ul 을 nav>ul로 표기 : 메뉴는 부모자식을 정확하게 표기하기 */
+
+.header nav>ul a {
+    display: block;
+    font-size: 0.85rem;
+}
+
+/* a영역을 크게 해줄 때 block에다가 line-height가 먹었다.a가 원래 인라인이었다*/
+
+.header nav>ul>li {
+    position: relative;
+}
+
+.header nav>ul>li~li::before {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto -1rem;
+    /*gap이 2rem이었으니까(li-li사이) 중앙으로*/
+    width: 1px;
+    height: 0.6rem;
+    background: var(--gc);
+    transform: translateY(-50%);
+}
+
+/*물결을 통해서 li~li 사이에 들어오도록 해줬다.*/
+
+/*inset: 50% auto auto 0;*/
+.header i {
+    font-size: 1.25rem;
+    padding: 0.25rem;
+    background: var(--gc);
+    border-radius: 3px;
+    margin-left: 1rem;
+    vertical-align: middle;
+}
+
+/* 아이콘에는 font-weight 주지 않는다. */
+.main_visual {
+    position: relative;
+}
+
+.main_visual::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/pt-bg04.png);
+
+}
+
+.main_visual .main_slider img {
+    width: 100%;
+}
+
+.main_visual .slogan {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    /*중앙*/
+    width: 1200px;
+    text-align: right;
+    color: var(--wc);
+    text-shadow: 0 0 2px var(--dc);
+    /* 가로 세로 블러 색상 사이즈를 차지하지 않는다. 레이아웃을 안깬다.*/
+    z-index: 999;
+}
+
+.main_visual .slogan h2 {
+    width: 1200px;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+}
+
+.main_visual .slogan h2::after {
+    content: "";
+    /*hr은 블록요소이다. hr로 만들 수 있다.*/
+    display: block;
+    width: 4rem;
+    height: 2px;
+    background: var(--gc);
+    margin: 1rem 5px 0 auto;
+
+}
+
+.main_visual .slogan p {
+    font-size: 0.75rem;
+    font-weight: 300;
+    line-height: 1.4;
+
+}
+
+.main_visual figure {
+    height: 30rem;
+}
+
+.main_visual .itm01 {
+    background: url(../img/main_bg01.jpg) no-repeat center center/auto 100%;
+}
+
+.main_visual .itm01.on {
+    background: url(../img/main_bg01.jpg) no-repeat center center/auto 120%;
+    transition: 2s;
+}
+
+.main_visual .itm02 {
+    background: url(../img/main_bg02.jpg) no-repeat center center/auto 100%;
+}
+
+.main_visual .itm02.on {
+    background: url(../img/main_bg02.jpg) no-repeat center center/auto 120%;
+    transition: 2s;
+}
+
+.main_visual .itm03 {
+    background: url(../img/main_bg03.jpg) no-repeat center center/auto 100%;
+}
+
+.main_visual .itm03.on {
+    background: url(../img/main_bg03.jpg) no-repeat center center/auto 120%;
+    transition: 2s;
+}
+
+.content {
+    padding: 100px 0;
+}
+
+.content .container {
+    display: flex;
+    gap: 30px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.content figure {
+    flex: 1;
+
+    /*.content .container>* 하나씩 나눠가져라 */
+}
+
+.content figure .box {
+    margin: 0 0 20px 0;
+    overflow: hidden;
+}
+
+/*.content .container figure는 .content figure로 쓸 수 있찌요*/
+
+.content figure img {
+    transition: 0.5s;
+}
+
+.content figure:hover img {
+    transform: scale(1.5);
+}
+
+.content strong {
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 0 17px 0;
+}
+
+/*(inline 태그에도 먹는다 글자 박스 다 된다.) display block과 margin대신 line height 줘서 만드는 것도 가능하지만 정확하게 만들기는 margin이 룰이고 좋을 것 같다.*/
+
+.content p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+/*strong과 p의 공간 계산할 때 : 15*1.4-15/2 이렇게 한다~ 정도*/
+
+.product {
+    padding: 30px 0;
+    border-top: 1px solid var(--gc);
+}
+
+.product .container {
+    display: flex;
+    gap: 30px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.product .container .left {
+    flex: 2;
+}
+
+.product .container .right {
+    flex: 1;
+    line-height: 1.4;
+    border-left: 1px solid var(--gc);
+    padding: 0 15px 0 30px;
+
+}
+
+.product .container .left ul {
+    display: flex;
+    gap: 10px;
+}
+
+.product .tel {
+    border-bottom: 1px solid var(--mc);
+    margin: 0 0 15px 0;
+    font-size: 31px;
+    font-weight: 700;
+    line-height: 2;
+}
+
+
+.customer {
+    display: flex;
+}
+
+.customer>div {
+    flex: 1;
+}
+
+.customer .left {
+    text-align: right;
+    background: url(../img/main_banner01.jpg) no-repeat center center/cover;
+}
+
+.customer .right {
+    background: url(../img/main_banner02.jpg) no-repeat center center/cover;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/*연하게 까는 방법 rgba(0, 0, 0, 0.3)*/
+
+.customer>div a {
+    padding: 50px 40px;
+    color: #ddd;
+    display: block;
+    text-shadow: 0 0 3px var(--dc);
+    background: url(../img/pt-bg01.png);
+}
+
+.customer>div a h3 {
+    font-size: 31px;
+    font-weight: 500;
+    margin: 0 0 15px 0;
+}
+
+.customer>div a p {
+    font-size: 13px;
+    font-weight: 300;
+    text-transform: uppercase;
+    /*대문자로 바꿔주는 코드*/
+}
+
+.footer {
+    padding: 30px 0 50px 0;
+    font-size: 13px;
+}
+
+.footer .container {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .logo {
+    flex: 1;
+}
+
+.footer address {
+    flex: 4;
+    font-style: normal;
+    padding: 15px 0 0 0;
+}
+
+.footer address ul {
+    margin: 0 0 5px 0;
+}
+
+.footer address ul li {
+    display: inline-block;
+}
+
+.footer address ul li~li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 11px;
+    background: var(--gc);
+    margin: 0 7px;
+}

@@ -1,0 +1,41 @@
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+.top_banner {
+    position: relative;
+    background: plum;
+
+}
+
+
+.top_banner .container {
+    width: 1200px;
+    height: 70px;
+    margin: 0 auto;
+    /* overflow: hidden; */
+    background: rgb(199, 84, 228);
+
+}
+
+.top_banner button {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    margin-left: 500px;
+    width: 100px;
+    height: 30px;
+    background: rgb(199, 84, 228);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.header {
+    line-height: 100vh;
+    /*전체화면에 색상이 쫙~*/
+    background: papayawhip;
+    color: blueviolet;
+    /*텍스트 색상*/
+
+    text-align: center;
+}
