@@ -274,7 +274,6 @@ img {
 /* 22.06.27. tae villiv_banner */
 
 .villiv_banner {
-    padding: 0 0 100px 0;
     margin: 0 auto;
     position: relative;
     width: 1200px;
@@ -336,11 +335,6 @@ img {
 .bottom .news_txt {
     display: flex;
 }
-
-.bottom .news_txt .txt~.txt {
-    padding: 0 15px;
-}
-
 
 
 .bottom .news_txt h5 {
