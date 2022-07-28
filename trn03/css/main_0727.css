@@ -1,0 +1,202 @@
+html {
+    font-size: 10px;
+    /* 20px을 많이 사용하는 편 */
+}
+
+body {
+    font-size: 1.6rem;
+    /* 16px */
+}
+
+@media (max-width:768px) {
+    html {
+        font-size: 10px;
+    }
+
+    body {
+        font-size: 1.6rem;
+    }
+}
+
+
+.container {
+    display: flex;
+    width: 120rem;
+    margin: 0 auto;
+    /* 중앙정렬. 마진겹침현상 있으니 아래위로 주지말자 */
+}
+
+
+/* a태그 = 인라인태그 아래위 마진패딩 안먹음. width height 줄수없다 좌우마진 좌우패딩만
+아래위로 패딩이 먹은거처럼 보인다. 
+특별한경우는 높이주면안된다. 아래위 패딩준다(패딩은 백그라운드를 포함)*/
+
+.TopBanner {
+    background: #f9f9f9;
+    padding: 3rem 0 3rem 0;
+}
+
+.TopBanner .container {
+    position: relative;
+    display: block;
+    /* 반응형에서는 한꺼번에 세로로 바로 쫙 바뀔 수 있도록
+    하고싶어서 container를 따로 빼놨는데.. 한번 생각해보기css 프레임워크 부트스트랩 */
+}
+
+.TopBanner h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+}
+
+.TopBanner p {
+    font-size: 1.3rem;
+    /* 가독성에 대한 이야기.. rotate 돌리니까 가독성이 좀 생겼다?? ㅋㅋ 별로다 */
+}
+
+.TopBanner a {
+    display: inline-block;
+    border: 1px solid #333;
+    /* margin: -2px 0 0 0; */
+    margin: 0 0 0 2rem;
+    padding: 2px 2rem 5px 2rem;
+    /* 바뀌어야하지 않는 공간들은 px로 만들어줘야한다.(버튼 내부의 공간을 생각해서 만들었기 떄문에 줄어들면 안된다.) */
+    transform: translateY(-2px);
+    /* 1. a태그 : 인라인 - 패딩을 위, 아래 다르게 줬다. 
+    padding: 2px 2rem 5px 2rem;
+    박스가 안맞는다. */
+    /* 2. 네모 박스를 마진으로 맞췄더니.. p 안에 넣어두는바람에 겹쳐버려서 나타나지가 않음 */
+    /* 3. transform으로 해결! */
+}
+
+/* 섹션 > 큰 섹션에는 타이틀이 들어간다. > 아티클, 어사이드 태그(해외방식? 그누보드) */
+
+
+.TopBanner i {
+    /* xi-close 이렇게 불러오지말자. 바꿀수도있으니까 */
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+/* 
+flex > column -> order를 사용할 수 있다.
+float ->
+flex item에 사이즈를줘서 줄바꿈되도록
+flex > block?
+*/
+
+/* absolute > static
+
+*/
+@media (max-width:1000px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        margin: 0 auto;
+    }
+
+    /* 팝업처럼 만들어주기 위해 absolute 추가.
+    팝업하면 너비를 특정해줘야 하는 경우가 생긴다.*/
+    .TopBanner {
+        position: absolute;
+
+        /* 바꾼 것 */
+        top: 50%;
+        /* left: 50%;
+        transform: translate(-50%, -50%); */
+        left: 1.5rem;
+        right: 1.5rem;
+        transform: translateY(-50%);
+
+        background: #f9f9f9;
+        padding: 3rem 0 3rem 0;
+    }
+
+    .TopBanner .container {
+        position: static;
+        display: block;
+        /* 바꾼 것 */
+        padding: 0 2rem 0 2rem;
+
+    }
+
+    .TopBanner h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0 0 1rem 0;
+    }
+
+    .TopBanner p {
+        font-size: 1.3rem;
+
+        /* 바꾼 것 */
+        line-height: 1.4;
+
+    }
+
+    .TopBanner a {
+        border: 1px solid #333;
+        padding: 2px 2rem 5px 2rem;
+
+        /* 바꾼 것 */
+        display: block;
+        width: 100px;
+        text-align: center;
+
+        margin: 2rem 0 0 0;
+        transform: translateY(0);
+
+    }
+
+    .TopBanner i {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        /* 바꾼 것 */
+        padding: 5px;
+        background: #333;
+        color: #fff;
+    }
+
+}
+
+.pop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 400px;
+    height: 500px;
+    background: #f00;
+}
+
+.pop button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.pop:nth-of-type(2) {
+    top: 40%;
+    left: 40%;
+}
+
+.pop:nth-of-type(3) {
+    top: 30%;
+    left: 30%;
+}
+
+.pop:nth-of-type(4) {
+    top: 20%;
+    left: 20%;
+}
+
+.pop:nth-of-type(5) {
+    top: 10%;
+    left: 10%;
+}
