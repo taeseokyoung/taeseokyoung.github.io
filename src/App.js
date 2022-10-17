@@ -5,6 +5,7 @@ import Cover from './Cover';
 import Main from './Main';
 import Footer from './Footer';
 import Header from './Header';
+import Close from './Close';
 import './css/reset.css';
 import './css/App.scss';
 
@@ -29,6 +30,7 @@ const App = () => {
                             <ReactFullpage.Wrapper>
                                 <Cover />
                                 <Main />
+                                <Close />
                             </ReactFullpage.Wrapper >
                         );
                     }}
