@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
+import { }
 
 
 
@@ -20,12 +21,13 @@ const Main = () => {
                 <div className="content">
                     <div className="up">
                         <ul className='keyword'>
+
                             <li>#WEB</li>
                             <li>#SPORT</li>
                             <li>#SHOPPINGMALL</li>
                         </ul>
                         <h2>LULULEMON</h2>
-                        <p className='ktit'>룰루레몬 웹사이트</p>
+                        <p className='stit'>룰루레몬 웹사이트</p>
                     </div>
                     <div className="down">
                         <div className="color">
