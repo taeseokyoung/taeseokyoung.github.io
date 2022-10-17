@@ -5,8 +5,9 @@ const FootData = styled.footer`
 display:flex;
 position:fixed;
 bottom:0;
-width:140rem;
-padding:0 0 3rem 0;
+width: calc(100% - 10rem);
+margin:0 0 3rem 0;
+
 .icon {
     display:flex;
     justify-content:flex-end;

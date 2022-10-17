@@ -1,12 +1,13 @@
 import React from 'react'
 import { gnb } from './Data'
 import styled from "styled-components";
+import { useDispatch } from 'react-redux'
+import { change } from './store';
 
-const Gnb = styled.header`
+const Gnb = styled.div`
 position:fixed;
-width:140rem;
-margin:0 auto;
-.gnb{
+width: calc(100% - 10rem);
+.navigation{
     display:flex;
     justify-content: space-between;
     line-height:10rem;
@@ -25,7 +26,8 @@ margin:0 auto;
            }
         }
     }
-    .resume {
+    .dark {
+        display: block;
         margin: 3rem 0 3rem 3rem;
         padding: 0 2rem;
        }
@@ -34,10 +36,11 @@ margin:0 auto;
 `;
 
 const Header = () => {
+    const dispatch = useDispatch();
     return (
-        <header className='Header'>
+        <div className='gnb'>
             <Gnb>
-                <div className="gnb">
+                <div className="navigation">
                     <h1>Tae Seo Kyoung</h1>
                     <nav>
                         <ul>
@@ -49,11 +52,14 @@ const Header = () => {
                                 })
                             }
                         </ul>
-                        <button className="resume">Resume</button>
+                        {/* <button className="resume">Resume</button> */}
+                        <button className='dark' onClick={() => dispatch(change())}>
+                            change mode
+                        </button>
                     </nav>
                 </div>
             </Gnb >
-        </header>
+        </div>
 
     )
 }
