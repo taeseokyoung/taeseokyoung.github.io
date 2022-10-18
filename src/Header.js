@@ -7,6 +7,7 @@ import { change } from './store';
 const Gnb = styled.div`
 position:fixed;
 width: calc(100% - 10rem);
+z-index:999;
 .navigation{
     display:flex;
     justify-content: space-between;
@@ -27,9 +28,7 @@ width: calc(100% - 10rem);
         }
     }
     .dark {
-        display: block;
-        margin: 3rem 0 3rem 3rem;
-        padding: 0 2rem;
+        display: inline-block;
        }
 }
 
@@ -53,9 +52,11 @@ const Header = () => {
                             }
                         </ul>
                         {/* <button className="resume">Resume</button> */}
-                        <button className='dark' onClick={() => dispatch(change())}>
-                            change mode
-                        </button>
+                        <div className='dark_btn'>
+                            <button className='dark' onClick={() => dispatch(change())}>
+                                darkbtn
+                            </button>
+                        </div>
                     </nav>
                 </div>
             </Gnb >

@@ -12,10 +12,13 @@ margin:0 0 3rem 0;
     display:flex;
     justify-content:flex-end;
     flex-direction:column;
+
     img {
     width:4rem;
     height:4rem;
+    filter: invert(20%);
     }
+
     .github {
     font-size:2.5rem;
     margin:0.7rem;
@@ -38,7 +41,7 @@ const Footer = () => {
     return (
         <FootData>
             <div className="icon">
-                <img src={process.env.PUBLIC_URL + "/image/tstory.png"} alt="" />
+                <img src={process.env.PUBLIC_URL + "/image/tstory.svg"} alt="" />
                 <FiGithub className='github' />
             </div>
             <div className="license">

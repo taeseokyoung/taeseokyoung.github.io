@@ -1,41 +1,98 @@
 // 전역 css
 
-* {
-    outline: 1px solid #f00;
-}
+// * {
+//     outline: 1px solid #f00;
+// }
 
 html {
     font-size: 10px;
-
+    height: 100%;
 }
 
 //https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients
 
 body {
+
+    height: 100%;
     font-size: 1.6rem;
     background: linear-gradient(217deg,
             rgba(251, 214, 227, 0.8),
             rgba(255, 255, 255, 0.2) 70.71%),
         linear-gradient(127deg,
-            rgba(122, 130, 177, 0.8),
-            rgba(255, 255, 255, 0.8) 70.71%),
+            rgba(202, 212, 255, 1),
+            rgba(255, 255, 255, 1) 70.71%),
         linear-gradient(336deg,
-            rgba(50, 63, 159, 1),
-            rgba(32, 37, 77, 1) 70.71%);
+            rgba(50, 63, 159, 0.9),
+            rgba(32, 37, 77, 0.2) 70.71%);
+    // background: linear-gradient(217deg,
+    //         rgba(251, 214, 227, 0.8),
+    //         rgba(255, 255, 255, 0.2) 70.71%),
+    //     linear-gradient(127deg,
+    //         rgba(122, 130, 177, 0.8),
+    //         rgba(255, 255, 255, 0.8) 70.71%),
+    //     linear-gradient(336deg,
+    //         rgba(140, 157, 190, 1),
+    //         rgba(36, 37, 77, 1) 80%);
 }
+
+.Wrap {
+    position: relative;
+    height: 100vh;
+
+    #text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        stroke-dasharray: 951;
+        animation: 3s fillSvg infinite;
+        // document.querySelector("polyline").getTotalLength()
+        // 951.965576171875
+
+        @keyframes fillSvg {
+            0% {
+                stroke-dashoffset: 951;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .loading {
+            height: 4rem;
+            width: 8rem;
+
+            svg {
+                .cls-1 {
+                    fill: none;
+                    stroke: #262e56;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-width: 5px;
+                }
+            }
+        }
+    }
+
+}
+
 
 .PF {
     &.on {
         background:
-            // linear-gradient(217deg,
-            //     rgba(251, 214, 227, 0.8),
-            //     rgba(255, 255, 255, 0.2) 70.71%),
-            // linear-gradient(127deg,
-            //     rgba(122, 130, 177, 0.8),
-            //     rgba(255, 255, 255, 0.8) 70.71%),
+            // rgb(158, 186, 243)
+            // rgb(53, 58, 175)
+            // rgba(50, 63, 159, 0.9),
+            linear-gradient(217deg,
+                rgba(251, 214, 227, 0.5),
+                rgba(255, 255, 255, 0) 70.71%),
+            linear-gradient(127deg,
+                rgba(122, 130, 177, 0.5),
+                rgba(0, 0, 0, 0.4) 70.71%),
             linear-gradient(336deg,
-                rgba(50, 63, 159, 0.8),
-                rgba(32, 37, 77, 1) 70.71%);
+                rgba(140, 157, 190, 0.6),
+                rgb(42, 43, 105) 80%);
         color: #f7f7f7;
 
     }
@@ -50,23 +107,21 @@ body {
 
 .btn {
     padding: 0.7rem 2.3rem;
-    border: 1px solid #333;
+    border: 1px solid hsl(0, 0%, 20%);
     border-radius: 0.5rem;
-
-
 }
-
 
 .Header {}
 
 
 .section {
-    width: 140rem;
+    width: 143rem;
     margin: 0 auto;
 }
 
 .case {
     height: calc(100vh - 35rem);
+
 }
 
 .scase {
@@ -85,6 +140,7 @@ body {
     }
 
     h2 {
+        text-indent: -0.3rem;
         font-size: 6rem;
         margin: 0 0 1.5rem 0;
     }
@@ -104,13 +160,13 @@ body {
 
 
 dt {
-    font-size: 2.5rem;
+    font-size: 1.7rem;
     font-weight: 600;
     margin: 0 0 0.5rem 0;
 }
 
 dd {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
 }
 
 .preview {
@@ -148,18 +204,23 @@ dd {
 
 .des {
     white-space: pre-wrap;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     line-height: 1.45;
 }
 
 
-
-
-
-
-
-
-
-.fp-watermark {
-    display: none;
+// 슬라이드 기본 padding
+.slick-list {
+    padding: 0 -1.5rem;
 }
+
+.slick-slide {
+    padding: 0 1.5rem;
+}
+
+.loading {}
+
+// 저작권 나중에 편집
+// .fp-watermark {
+//     display: none;
+// }
