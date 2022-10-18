@@ -10,10 +10,20 @@ const changeMode = createSlice({
 
 export const { change } = changeMode.actions;
 
+// const LoadingPage = createSlice({
+//     name: '로딩페이지',
+//     initialState: false,
+//     reducers: {
+//         change: (state) => !state
+//     }
+// })
+
+// export const { loading } = LoadingPage.actions;
 
 const store = configureStore({
     reducer: {
-        changeMode: changeMode.reducer
+        changeMode: changeMode.reducer,
+        // LoadingPage: LoadingPage.reducer
     }
 });
 
