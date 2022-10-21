@@ -83,7 +83,12 @@ const Main = () => {
                                                 })
                                             }
                                         </ul>
-                                        <img src="" alt="" />
+                                        {/* {
+                                            pf.map((it, idx) => <figure key={idx}><img src={it.src} alt="" /></figure>)
+                                        } */}
+                                        <figure>
+                                            <img src={pf.src} alt="" />
+                                        </figure>
                                     </div>
                                 </div>
                             </div>

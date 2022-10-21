@@ -98,6 +98,27 @@ body {
                 rgb(42, 43, 105) 80%);
         color: #f7f7f7;
 
+        .btn {
+            border: 1px solid #f7f7f7;
+        }
+
+        figure {
+            img {
+                border: 1px solid rgb(247, 247, 247, 0);
+            }
+        }
+
+        .icon {
+            img {
+                filter: invert(94%) sepia(5%) saturate(81%) hue-rotate(1deg) brightness(122%) contrast(94%);
+            }
+        }
+
+        .color {
+            dd {
+                border: 1px solid rgb(247, 247, 247, 0);
+            }
+        }
     }
 }
 
@@ -138,6 +159,7 @@ body {
 
     .content {
         display: flex;
+        flex: 0.3;
         flex-direction: column;
         justify-content: space-between;
     }
@@ -174,6 +196,7 @@ dd {
 
 .preview {
     display: flex;
+    flex: 0.7;
     flex-direction: column;
     justify-content: space-between;
 
@@ -181,12 +204,17 @@ dd {
         display: flex;
         gap: 1.5rem;
         justify-content: flex-end;
+        margin: 0 0 4.5rem 0;
     }
 
-    img {
-        width: 80rem;
-        height: 40rem;
-        background: #333;
+    figure {
+
+        img {
+            width: 100rem;
+            height: auto;
+            border: 1px solid hsl(0, 0%, 20%);
+            border-radius: 1rem;
+        }
     }
 
 }
@@ -201,6 +229,7 @@ dd {
         width: 2rem;
         height: 2rem;
         border-radius: 50%;
+        border: 1px solid rgb(51, 51, 51, 0.5);
     }
 
 }

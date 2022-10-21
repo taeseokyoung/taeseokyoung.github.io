@@ -8,7 +8,7 @@ import Main from './Main';
 import Footer from './Footer';
 import Header from './Header';
 import Close from './Close';
-// import Loading from './Loading';
+import Loading from './Loading';
 import './css/reset.css';
 import './css/App.scss';
 
@@ -16,37 +16,37 @@ const App = () => {
     // const dispatch = useDispatch();
     const { changeMode } = useSelector(it => it)
 
-    // const [loading, setLoading] = useState();
+    const [loading, setLoading] = useState();
 
-    // const mainApi = async () => {
-    //     setLoading(true);
+    const mainApi = async () => {
+        setLoading(true);
 
-    //     try {
-    //         const response = await fetch(`http://localhost:3000/`, {
-    //             method: 'POST',
-    //             headers: {
-    //                 Accept: 'application/json',
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             body: JSON.stringify(),
-    //         });
+        try {
+            const response = await fetch(`http://localhost:3000/`, {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(),
+            });
 
-    //         const result = await response.json();
-    //         console.log('mainData', result);
-    //         setLoading(false); // api 호출 완료 됐을 때 false로 변경하려 로딩화면 숨김처리
-    //     } catch (error) {
-    //         window.alert(error);
-    //     }
-    // };
+            const result = await response.json();
+            console.log('mainData', result);
+            setLoading(false); // api 호출 완료 됐을 때 false로 변경하려 로딩화면 숨김처리
+        } catch (error) {
+            window.alert(error);
+        }
+    };
 
-    // useEffect(() => {
-    //     mainApi();
-    // }, []);
+    useEffect(() => {
+        mainApi();
+    }, []);
 
 
     return (
         <div className="Wrap">
-            {/* {loading ? <Loading /> : null} */}
+            {loading ? <Loading /> : null}
             <div className={`PF ${changeMode ? "on" : ""}`}>
                 <div className="PFinner">
                     <Header />
