@@ -16,7 +16,7 @@ const portfolio = [
         color: ["#e70321", "#333333", "#f7f7f7"],
         skill: ["React", "React Router", "Styled-components", "sass"],
         src: "/image/lululemon.png",
-        link: "https://taeseokyoung.gitub.io/test_web_react"
+        link: "taeseokyoung.gitub.io/test_web_react"
     },
     {
         id: 2,

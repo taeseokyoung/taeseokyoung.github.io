@@ -87,7 +87,9 @@ const Main = () => {
                                             pf.map((it, idx) => <figure key={idx}><img src={it.src} alt="" /></figure>)
                                         } */}
                                         <figure>
-                                            <img src={pf.src} alt="" />
+                                            <a href={pf.link} target="_blank">
+                                                <img src={pf.src} alt="" />
+                                            </a>
                                         </figure>
                                     </div>
                                 </div>

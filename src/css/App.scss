@@ -1,8 +1,8 @@
 // 전역 css
 
-// * {
-//     outline: 1px solid #f00;
-// }
+* {
+    outline: 1px solid #f00;
+}
 
 html {
     font-size: 10px;
@@ -139,7 +139,7 @@ body {
 
 
 .section {
-    width: 143rem;
+    width: 120rem;
     margin: 0 auto;
 }
 
@@ -256,3 +256,46 @@ dd {
 // .fp-watermark {
 //     display: none;
 // }
+
+.dark_btn {
+    position: relative;
+
+    button {
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        visibility: hidden;
+        width: 60px;
+        z-index: -1;
+    }
+
+    label {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        display: inline-block;
+        width: 60px;
+        height: 30px;
+        background: rgb(168, 160, 190);
+        font-size: 0;
+        border-radius: 15px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            top: 2px;
+            left: 2px;
+            border-radius: 50%;
+            background: #fff
+        }
+
+        &.on::after {
+            background: rgb(83, 70, 92);
+            left: auto;
+            right: 2px;
+        }
+    }
+}

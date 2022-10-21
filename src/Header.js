@@ -1,7 +1,7 @@
 import React from 'react'
 import { gnb } from './Data'
 import styled from "styled-components";
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { change } from './store';
 
 const Gnb = styled.div`
@@ -27,14 +27,16 @@ z-index:999;
            }
         }
     }
-    .dark {
-        display: inline-block;
+    .dark_btn {
+        display: block;
        }
 }
 
 `;
 
 const Header = () => {
+    const { changeMode } = useSelector(it => it)
+
     const dispatch = useDispatch();
     return (
         <div className='gnb'>
@@ -53,14 +55,17 @@ const Header = () => {
                         </ul>
                         {/* <button className="resume">Resume</button> */}
                         <div className='dark_btn'>
-                            <button className='dark' onClick={() => dispatch(change())}>
+                            <label htmlFor='btn' className={changeMode ? "on" : ""}>
+                                dark
+                            </label>
+                            <button id='btn' onClick={() => dispatch(change())}>
                                 darkbtn
                             </button>
                         </div>
                     </nav>
                 </div>
             </Gnb >
-        </div>
+        </div >
 
     )
 }
