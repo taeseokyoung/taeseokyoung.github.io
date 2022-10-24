@@ -20,7 +20,7 @@ const Main = () => {
     }
 
     return (
-        <section className="MainSlider section">
+        <section className="section">
             <Slider {...settings} ref={mainSlide}>
                 {
                     portfolio.map((pf, idx) => {

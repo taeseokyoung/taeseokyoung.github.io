@@ -138,7 +138,7 @@ body {
 .Header {}
 
 
-.section {
+.inner {
     width: 130rem;
     margin: 0 auto;
 }
@@ -147,35 +147,37 @@ body {
     display: flex;
     justify-content: space-between;
 
+    .scase {
+        .left {
+            display: flex;
+            flex: 0.7;
+            align-items: center;
 
-    .left {
-        display: flex;
-        flex: 0.7;
-        align-items: center;
+            h2 {
+                text-indent: -0.3rem;
+                font-size: 6rem;
+                margin: 0 0 1.5rem 0;
+                line-height: 1.45;
+            }
+        }
 
-        h2 {
-            text-indent: -0.3rem;
-            font-size: 6rem;
-            margin: 0 0 1.5rem 0;
-            line-height: 1.2;
+        .right {
+            display: flex;
+            flex: 0.3;
+            align-items: center;
+
+
+            figure {
+                width: 500px;
+                height: 500px;
+            }
+
+            .tae01 {
+                background: url(../../public/image/tae.png) no-repeat center center/cover;
+            }
         }
     }
 
-    .right {
-        display: flex;
-        flex: 0.3;
-        align-items: center;
-
-
-        figure {
-            width: 500px;
-            height: 500px;
-        }
-
-        .tae01 {
-            background: url(../../public/image/tae.png) no-repeat center center/cover;
-        }
-    }
 
 
 
@@ -281,7 +283,7 @@ body {
     }
 }
 
-.MainSlider {
+.section {
     position: relative;
 
     .slideArrows {
@@ -317,6 +319,7 @@ body {
 
 
 }
+
 
 .color {
     display: flex;

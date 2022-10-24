@@ -4,7 +4,7 @@ const Cover = () => {
     return (
         <section className="section">
             <div className="case">
-                <div className="cover">
+                <div className="scase">
                     <div className="left">
                         <h2>안녕하세요,<br />
                             프론트엔드 개발자에 도전하는<br />
