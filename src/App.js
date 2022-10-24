@@ -3,10 +3,11 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import { useSelector } from 'react-redux';
 // import { change, loading } from './store';
 import Cover from './Cover';
-import Main from './Main';
+import Prototype from './Prototype';
+import Training from './Training';
 import Footer from './Footer';
 import Header from './Header';
-import Close from './Close';
+import Contact from './Contact';
 import Loading from './Loading';
 import './css/reset.css';
 import './css/App.scss';
@@ -58,13 +59,15 @@ const App = () => {
                         //fullpage options
                         licenseKey={'YOUR_KEY_HERE'}
                         scrollingSpeed={1000}
+                        anchors={['Cover', 'Prototype', 'Training', 'Contact']}
 
                         render={({ state, fullpageApi }) => {
                             return (
                                 <ReactFullpage.Wrapper>
                                     <Cover />
-                                    <Main />
-                                    <Close />
+                                    <Prototype />
+                                    <Training />
+                                    <Contact />
                                 </ReactFullpage.Wrapper >
                             );
                         }}
