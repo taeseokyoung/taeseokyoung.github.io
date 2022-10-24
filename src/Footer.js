@@ -41,8 +41,8 @@ const Footer = () => {
     return (
         <FootData>
             <div className="icon">
-                <img src={process.env.PUBLIC_URL + "/image/tstory.svg"} alt="" />
-                <FiGithub className='github' />
+                <a href="https://tae-seokyoung.tistory.com/"><img src={process.env.PUBLIC_URL + "/image/tstory.svg"} alt="" /></a>
+                <a href="https://github.com/taeseokyoung"><FiGithub className='github' /></a>
             </div>
             <div className="license">
                 <p>Ver. <span>2022. 1. 0. 0.</span></p>

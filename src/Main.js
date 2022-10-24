@@ -1,29 +1,42 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import { portfolio } from "./Data";
-
+// import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+import { TfiAngleLeft, TfiAngleRight } from "react-icons/tfi";
 
 
 
 const Main = () => {
 
+    const mainSlide = useRef(null);
+
     const settings = {
         dots: false,
         arrows: false,
-        infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1
     }
 
     return (
-        <section className="section">
-            <Slider {...settings}>
+        <section className="MainSlider section">
+            <Slider {...settings} ref={mainSlide}>
                 {
                     portfolio.map((pf, idx) => {
                         return (
                             <div className="case" key={idx}>
+                                <div className="skill">
+                                    <ul>
+                                        {
+                                            pf.skill.map((skill, idx) => {
+                                                return (
+                                                    <li key={idx} className="btn">{skill}</li>
+                                                )
+                                            })
+                                        }
+                                    </ul>
+                                </div>
                                 <div className="scase">
                                     <div className="content">
                                         <div className="up">
@@ -74,7 +87,7 @@ const Main = () => {
                                         </div>
                                     </div>
                                     <div className="preview">
-                                        <ul>
+                                        {/* <ul>
                                             {
                                                 pf.skill.map((skill, idx) => {
                                                     return (
@@ -82,13 +95,13 @@ const Main = () => {
                                                     )
                                                 })
                                             }
-                                        </ul>
+                                        </ul> */}
                                         {/* {
                                             pf.map((it, idx) => <figure key={idx}><img src={it.src} alt="" /></figure>)
                                         } */}
-                                        <figure>
+                                        <figure className={`itm0${pf.id}`}>
                                             <a href={pf.link} target="_blank">
-                                                <img src={pf.src} alt="" />
+                                                {/* <img src={pf.src} alt="" /> */}
                                             </a>
                                         </figure>
                                     </div>
@@ -98,6 +111,10 @@ const Main = () => {
                     })
                 }
             </Slider>
+            <div className="slideArrows">
+                <button onClick={() => mainSlide.current.slickPrev()}><TfiAngleLeft /></button>
+                <button onClick={() => mainSlide.current.slickNext()}><TfiAngleRight /></button>
+            </div>
         </section>
     )
 }

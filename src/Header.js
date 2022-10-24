@@ -24,6 +24,8 @@ z-index:999;
            li{
             display:inline-block;
             margin : 0 2rem 0 0; 
+            font-weight:500;
+            color: #333;
            }
         }
     }
