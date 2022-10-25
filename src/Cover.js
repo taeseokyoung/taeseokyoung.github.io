@@ -7,9 +7,10 @@ const Cover = () => {
                 <div className="case">
                     <div className="left">
                         <h2>안녕하세요,<br />
-                            프론트엔드 개발자가 될<br />
+                            <span>프론트엔드 개발자</span>가 될<br />
                             태서경 입니다.
                         </h2>
+                        <p>2022. FRONTEND PORTFOLIO</p>
                     </div>
                     <div className="right">
                         <figure className='tae01'></figure>

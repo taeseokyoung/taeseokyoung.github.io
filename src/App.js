@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 import { useSelector } from 'react-redux';
 // import { change, loading } from './store';
@@ -8,7 +8,7 @@ import Training from './Training';
 import Footer from './Footer';
 import Header from './Header';
 import Contact from './Contact';
-import Loading from './Loading';
+// import Loading from './Loading';
 import './css/reset.css';
 import './css/App.scss';
 
@@ -16,7 +16,7 @@ const App = () => {
     // const dispatch = useDispatch();
     const { changeMode } = useSelector(it => it)
 
-    const [loading, setLoading] = useState();
+    // const [loading, setLoading] = useState();
 
     // const mainApi = async () => {
     //     setLoading(true);

@@ -101,6 +101,16 @@ const training = [
         link: "https://taeseokyoung.github.io/hyundaielevator"
     },
 ]
-export { gnb, portfolio, training }
+
+const profile = {
+
+    name: "태서경",
+    ename: "Tae Seo Kyoung",
+    email: "xotjrud@gmail.com",
+    github: "https://github.com/taeseokyoung",
+    tel: "010-2844-9624"
+}
+
+export { gnb, portfolio, training, profile }
 
 // RESPONSIVE 

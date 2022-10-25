@@ -1,5 +1,4 @@
-import React, { useRef } from 'react'
-import { Link } from 'react-router-dom';
+import React from 'react'
 import { training } from "./Data";
 
 const Training = () => {
@@ -13,7 +12,7 @@ const Training = () => {
                     {
                         training.map(it => {
                             return (
-                                <div className="trainbox">
+                                <div className="trainbox" key={it.id}>
                                     <a href={it.link} target="_blank">
                                         <figure className={`training0${it.id}`}> </figure>
                                     </a>

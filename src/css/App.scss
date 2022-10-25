@@ -191,14 +191,11 @@ body {
         }
 
         .grid {
-            figure {}
-
             ul {
                 li {
                     border: 1px solid rgba(0, 0, 0, 0);
                     background-color: rgba(122, 130, 177, 0.9);
                 }
-
             }
         }
     }
@@ -271,35 +268,52 @@ body {
     // overflow: hidden;
 
     .case {
+        outline: 1px solid #f00;
         display: flex;
+        flex-direction: row;
+        justify-content: space-between;
 
         .left {
             display: flex;
-            flex: 0.7;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
 
             h2 {
                 text-indent: -0.3rem;
-                font-size: 7rem;
+                font-size: 6.5rem;
+                font-weight: 400;
                 margin: 0 0 1.5rem 0;
-                line-height: 1.45;
+                line-height: 1.2;
+
+                span {
+                    font-size: 7rem;
+                    font-weight: 600;
+                }
+            }
+
+            p {
+                text-align: left;
+                margin: 2rem 0 0 0;
+                font-size: 2rem;
+                font-weight: 400;
+                color: #111111;
             }
         }
 
         .right {
             display: flex;
-            flex: 0.3;
             align-items: center;
 
 
             figure {
                 width: 380px;
                 height: 500px;
+
+                &.tae01 {
+                    background: url(../../public/image/tae01.png)no-repeat center center/cover;
+                }
             }
 
-            .tae01 {
-                background: url(../../public/image/tae01.png)no-repeat center center/cover;
-            }
         }
     }
 
@@ -323,16 +337,14 @@ body {
             }
         }
     }
-
 }
-
 
 .scase {
     display: flex;
-    gap: 10rem;
+    gap: 5rem;
     // flex-direction: row;
     justify-content: space-evenly;
-    height: calc(100vh - 40rem);
+    height: 550px;
     // margin: 0 0 3.5rem 0;
     // overflow: hidden;
 
@@ -368,8 +380,21 @@ body {
         margin: 0 0 0.5rem 0;
     }
 
-    dd {
-        font-size: 1.5rem;
+    dl {
+        display: flex;
+        gap: 1rem;
+
+        dd {
+            font-size: 1.5rem;
+            line-height: 1.7;
+        }
+
+    }
+
+    .color {
+        dd {
+            font-size: 0;
+        }
     }
 
     .preview {
@@ -387,7 +412,7 @@ body {
 
         figure {
             width: auto;
-            height: 640px;
+            height: 550px;
             border: 1px solid #333333;
             border-radius: 1rem;
             // overflow-y: hidden;
@@ -415,7 +440,6 @@ body {
 
     }
 }
-
 
 .section {
     position: relative;
@@ -473,8 +497,9 @@ body {
     gap: 30px;
 
     figure {
+
         width: 413px;
-        height: 313px;
+        height: 300px;
         border-radius: 1rem;
         margin: 0 0 2rem 0;
         border: 1px solid #333;
@@ -542,12 +567,6 @@ body {
     padding: 0 1.5rem;
 }
 
-.loading {}
-
-// 저작권 나중에 편집
-// .fp-watermark {
-//     display: none;
-// }
 
 .dark_btn {
     position: relative;
@@ -590,6 +609,61 @@ body {
             left: auto;
             right: 2px;
         }
+    }
+}
+
+
+.contact {
+    width: 130rem;
+    margin: 0 auto;
+    display: flex;
+    // justify-content: space-between;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+
+    .txt {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 500px;
+        height: 300px;
+
+        figure {
+            &.tae02 {
+                width: 500px;
+                height: 400px;
+                background: url(../../public/image/tae02.png) no-repeat center bottom/cover;
+            }
+        }
+    }
+
+    .tit {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        h2 {
+            margin: 0 0 3rem 0;
+        }
+
+        ul {
+            li {
+                line-height: 1.4;
+            }
+        }
+    }
+
+
+    .name {
+        font-size: 2.5rem;
+    }
+
+
+    .email {}
+
+    p {
+        display: block;
     }
 }
 
