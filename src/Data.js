@@ -104,8 +104,8 @@ const training = [
 
 const profile = {
 
-    name: "태서경",
-    ename: "Tae Seo Kyoung",
+    // name: "태서경",
+    // ename: "Tae Seo Kyoung",
     email: "xotjrud@gmail.com",
     github: "https://github.com/taeseokyoung",
     tel: "010-2844-9624"
