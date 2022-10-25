@@ -4,7 +4,7 @@ import { profile } from "./Data";
 const Contact = () => {
     return (
         <section className="section">
-            <div className="scase contact">
+            <div className="contact">
                 <div className="tit">
                     <h2>Contact me!</h2>
                     <ul>

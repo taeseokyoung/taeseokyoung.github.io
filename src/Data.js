@@ -33,7 +33,7 @@ const portfolio = [
     {
         id: 3,
         title: "CHAHONG",
-        stitle: "차홍",
+        stitle: "차홍아르더",
         type: ["Web", "Brand", "Salon"],
         font: ["Poppins"],
         info: "글로벌한 헤어 브랜드 차홍. 프리미엄살롱, 살롱, 교육, 제품 4가지의 카테고리를 한눈에 보여주고 싶어서 메인 슬라이드와 네브 탭을 함께 볼 수 있도록 제작하였습니다.",
@@ -46,7 +46,7 @@ const portfolio = [
         id: 4,
         title: "MANCHESTER UNITED",
         stitle: "맨체스터 유나이티드",
-        type: ["Web", "Sport"],
+        type: ["Responsive Web", "Sport"],
         font: ["Noto Sans KR"],
         info: "영국 프리미어리그에서 활동하고 있는 맨체스터 유나이티트 팀의 한국 홈페이지 입니다. Grid와 Keyframs, iframe, slick slide를 활용하여 제작했습니다.",
         color: ["#c70101", "#333333", "#ffffff"],

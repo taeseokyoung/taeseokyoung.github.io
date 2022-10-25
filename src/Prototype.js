@@ -21,107 +21,73 @@ const Prototype = () => {
 
     return (
         <section className="section">
-            <div className="case">
-                <Slider {...settings} ref={mainSlide}>
-                    {
-                        portfolio.map((pf, idx) => {
-                            return (
-                                <div className="inner" key={idx}>
-                                    {/* <div className="skill">
-                                        <ul>
-                                            {
-                                                pf.skill.map((skill, idx) => {
-                                                    return (
-                                                        <li key={idx} className="btn">{skill}</li>
-                                                    )
-                                                })
-                                            }
-                                        </ul>
-                                    </div> */}
-                                    <div className="scase">
-                                        <div className="content">
-                                            <div className="up">
-                                                {/* <ul className='keyword'>
+            <Slider {...settings} ref={mainSlide} className="prototypeSlide">
+                {
+                    portfolio.map((pf, idx) => {
+                        return (
+                            <div className="case" key={idx}>
+                                <div className="inner">
+                                    <div className="content">
+                                        <div className="up">
+                                            <h2>{pf.title}</h2>
+                                            <p className='stit'>{pf.stitle}</p>
+                                        </div>
+                                        <p className='des'>{pf.info}</p>
+                                        <div className="down">
+                                            <dl className='type'>
+                                                <dt>Type</dt>
                                                 {
                                                     pf.type.map((type, idx) => {
                                                         return (
-                                                            <li key={idx}>{type}</li>
+                                                            <dd key={idx}>{type}</dd>
                                                         )
                                                     })
                                                 }
-                                            </ul> */}
-                                                <h2>{pf.title}</h2>
-                                                <p className='stit'>{pf.stitle}</p>
-                                            </div>
-                                            <div className="down">
-                                                <dl className='type'>
-                                                    <dt>Type</dt>
-                                                    {
-                                                        pf.type.map((type, idx) => {
-                                                            return (
-                                                                <dd key={idx}>{type}</dd>
-                                                            )
-                                                        })
-                                                    }
-                                                </dl>
-                                                <dl className='type'>
-                                                    <dt>Stack</dt>
-                                                    {
-                                                        pf.skill.map((skill, idx) => {
-                                                            return (
-                                                                <dd key={idx}>{skill}</dd>
-                                                            )
-                                                        })
-                                                    }
-                                                </dl>
-                                                <dl className="font">
-                                                    <dt>Font</dt>
-                                                    {
-                                                        pf.font.map((font, idx) => {
-                                                            return (
-                                                                <dd key={idx}>{font}</dd>
-                                                            )
-                                                        })
-                                                    }
-                                                </dl>
-                                                <dl className="color">
-                                                    <dt>Color</dt>
-                                                    {
-                                                        pf.color.map((color, idx) => {
-                                                            return (
-                                                                <dd key={idx} style={{ background: color }}>{color}</dd>
-                                                            )
-                                                        })
-                                                    }
-                                                </dl>
-                                                <p className='des'>{pf.info}</p>
-                                            </div>
-                                        </div>
-                                        <div className="preview">
-                                            {/* <ul>
-                                            {
-                                                pf.skill.map((skill, idx) => {
-                                                    return (
-                                                        <li key={idx} className="btn">{skill}</li>
-                                                    )
-                                                })
-                                            }
-                                        </ul> */}
-                                            {/* {
-                                            pf.map((it, idx) => <figure key={idx}><img src={it.src} alt="" /></figure>)
-                                        } */}
-                                            <a href={pf.link} target="_blank">
-                                                <figure className={`itm0${pf.id}`}></figure>
-                                            </a>
+                                            </dl>
+                                            <dl className='type'>
+                                                <dt>Stack</dt>
+                                                {
+                                                    pf.skill.map((skill, idx) => {
+                                                        return (
+                                                            <dd key={idx}>{skill}</dd>
+                                                        )
+                                                    })
+                                                }
+                                            </dl>
+                                            <dl className="font">
+                                                <dt>Font</dt>
+                                                {
+                                                    pf.font.map((font, idx) => {
+                                                        return (
+                                                            <dd key={idx}>{font}</dd>
+                                                        )
+                                                    })
+                                                }
+                                            </dl>
+                                            <dl className="color">
+                                                <dt>Color</dt>
+                                                {
+                                                    pf.color.map((color, idx) => {
+                                                        return (
+                                                            <dd key={idx} style={{ background: color }}>{color}</dd>
+                                                        )
+                                                    })
+                                                }
+                                            </dl>
+
                                         </div>
                                     </div>
+                                    <div className="preview">
+                                        <a href={pf.link} target="_blank">
+                                            <figure className={`itm0${pf.id}`}></figure>
+                                        </a>
+                                    </div>
                                 </div>
-                            )
-                        })
-                    }
-                </Slider>
-            </div>
-
+                            </div>
+                        )
+                    })
+                }
+            </Slider>
             <div className="slideArrows">
                 <button onClick={() => mainSlide.current.slickPrev()}><TfiAngleLeft /></button>
                 <button onClick={() => mainSlide.current.slickNext()}><TfiAngleRight /></button>
