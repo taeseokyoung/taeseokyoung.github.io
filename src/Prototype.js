@@ -110,11 +110,9 @@ const Prototype = () => {
                                             {/* {
                                             pf.map((it, idx) => <figure key={idx}><img src={it.src} alt="" /></figure>)
                                         } */}
-                                            <figure className={`itm0${pf.id}`}>
-                                                <a href={pf.link} target="_blank">
-                                                    {/* <img src={pf.src} alt="" /> */}
-                                                </a>
-                                            </figure>
+                                            <a href={pf.link} target="_blank">
+                                                <figure className={`itm0${pf.id}`}></figure>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

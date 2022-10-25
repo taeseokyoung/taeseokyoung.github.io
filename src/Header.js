@@ -1,6 +1,5 @@
 import React from 'react'
 import { gnb } from './Data'
-import styled from "styled-components";
 import { useDispatch, useSelector } from 'react-redux'
 import { change } from './store';
 

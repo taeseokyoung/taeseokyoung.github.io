@@ -1,6 +1,9 @@
-// 전역 css
-button // * {
+// * {
 //     outline: 1px solid #f00;
+// }
+
+// .fp-overflow {
+//     overflow: hidden;
 // }
 
 html {
@@ -187,404 +190,447 @@ body {
             }
         }
 
-    }
+        .grid {
+            figure {}
 
-    .PFinner {
-        position: relative;
-        width: calc(100% - 20rem);
-        margin: 0 auto;
-
-    }
-
-    .btn {
-        padding: 0.7rem 1.7rem;
-        border: 1px solid #333333;
-        border-radius: 0.5rem;
-    }
-
-    .gnb {
-        position: fixed;
-        width: calc(100% - 20rem);
-        z-index: 999;
-
-        .navigation {
-            display: flex;
-            justify-content: space-between;
-            line-height: 10rem;
-
-            h1 {
-                font-size: 2.3rem;
-                font-weight: 600;
-                color: #2a2b69;
-            }
-
-            nav {
-                display: flex;
-                justify-content: flex-end;
-
-                ul {
-                    li {
-                        display: inline-block;
-                        margin: 0 2rem 0 0;
-                        font-size: 1.8rem;
-                        font-weight: 500;
-                        color: #292944;
-                    }
-
-                    margin: 0 2rem 0 0;
-                }
-            }
-
-            .dark_btn {
-                display: block;
-            }
-        }
-    }
-
-
-    .case {
-        width: 130rem;
-        margin: 0 auto;
-        overflow: hidden;
-    }
-
-    .cover {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        overflow: hidden;
-
-        .case {
-            display: flex;
-
-            .left {
-                display: flex;
-                flex: 0.7;
-                align-items: center;
-
-                h2 {
-                    text-indent: -0.3rem;
-                    font-size: 7rem;
-                    margin: 0 0 1.5rem 0;
-                    line-height: 1.45;
-                }
-            }
-
-            .right {
-                display: flex;
-                flex: 0.3;
-                align-items: center;
-
-
-                figure {
-                    width: 380px;
-                    height: 500px;
-                }
-
-                .tae01 {
-                    background: url(../../public/image/tae01.png)no-repeat center center/cover;
-                }
-            }
-        }
-
-
-
-
-    }
-
-    .case {
-
-        .skill {
             ul {
-                display: flex;
-                gap: 1.5rem;
-                justify-content: flex-end;
-                margin: 0 0 1.5rem 0;
-
                 li {
-                    font-size: 1.3rem;
-                    font-weight: 500;
+                    border: 1px solid rgba(0, 0, 0, 0);
+                    background-color: rgba(122, 130, 177, 0.9);
                 }
+
+            }
+        }
+    }
+}
+
+
+.PFinner {
+    position: relative;
+    width: calc(100% - 20rem);
+    margin: 0 auto;
+
+}
+
+.btn {
+    padding: 0.7rem 1.7rem;
+    border: 1px solid #333333;
+    border-radius: 0.5rem;
+}
+
+.gnb {
+    position: fixed;
+    width: calc(100% - 20rem);
+    z-index: 999;
+
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        line-height: 10rem;
+
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 600;
+            color: #2a2b69;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+
+            ul {
+                li {
+                    display: inline-block;
+                    margin: 0 2rem 0 0;
+                    font-size: 1.8rem;
+                    font-weight: 500;
+                    color: #292944;
+                }
+
+                margin: 0 2rem 0 0;
             }
         }
 
+        .dark_btn {
+            display: block;
+        }
     }
+}
 
 
-    .scase {
+.case {
+    width: 130rem;
+    margin: 0 auto;
+    // overflow: hidden;
+}
+
+.cover {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // overflow: hidden;
+
+    .case {
         display: flex;
-        gap: 10rem;
-        // flex-direction: row;
-        justify-content: space-evenly;
-        height: calc(100vh - 40rem);
-        // margin: 0 0 3.5rem 0;
-        overflow: hidden;
 
-        .content {
-            display: flex;
-            flex: 0.3;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        h2 {
-            text-indent: -0.3rem;
-            font-size: 6rem;
-            margin: 0 0 1.5rem 0;
-        }
-
-        .stit {
-            font-size: 3rem;
-            margin: 0 0 3rem 0;
-        }
-
-
-        .type,
-        .font {
-            margin: 0 0 2.5rem 0;
-            line-height: 1.45;
-        }
-
-
-        dt {
-            font-size: 1.7rem;
-            font-weight: 600;
-            margin: 0 0 0.5rem 0;
-        }
-
-        dd {
-            font-size: 1.5rem;
-        }
-
-        .preview {
+        .left {
             display: flex;
             flex: 0.7;
-            flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
 
-            // ul {
-            //     display: flex;
-            //     gap: 1.5rem;
-            //     justify-content: flex-end;
-            //     margin: 0 0 4.5rem 0;
-            // }
+            h2 {
+                text-indent: -0.3rem;
+                font-size: 7rem;
+                margin: 0 0 1.5rem 0;
+                line-height: 1.45;
+            }
+        }
+
+        .right {
+            display: flex;
+            flex: 0.3;
+            align-items: center;
+
 
             figure {
-                width: 100%;
-                height: 100%;
-                border: 1px solid #333333;
-                border-radius: 1rem;
-                // overflow-y: hidden;
-
-                &.itm01 {
-                    background: url(../../public/image/itm01.png) no-repeat center top/cover;
-                }
-
-                &.itm02 {
-                    background: url(../../public/image/itm02.png) no-repeat center top/cover;
-                }
-
-                &.itm03 {
-                    background: url(../../public/image/itm03.png) no-repeat center top/cover;
-                }
-
-                &.itm04 {
-                    background: url(../../public/image/itm04.png) no-repeat center top/cover;
-                }
-
-                &.itm05 {
-                    background: url(../../public/image/itm05.png) no-repeat center top/cover;
-                }
+                width: 380px;
+                height: 500px;
             }
 
-        }
-    }
-
-
-    .section {
-        position: relative;
-
-        .slideArrows {
-
-            button {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                padding: 1rem 1rem 0.5rem 1rem;
-                font-size: 2rem;
-                background: inherit;
-                border: 1px solid #333;
-                border-radius: 0.5rem;
-                cursor: pointer;
-
-                &:hover {
-                    background: rgb(160, 163, 201);
-                    // border: 1px solid rgb(255, 255, 255, 0);
-                }
-
-                &:first-child {
-                    margin: 0 0 0 -700px;
-
-                }
-
-                &:last-child {
-                    margin: 0 0 0 700px;
-                }
+            .tae01 {
+                background: url(../../public/image/tae01.png)no-repeat center center/cover;
             }
-
-        }
-
-
-    }
-
-    // .grid {
-    //     display: grid;
-    //     grid-template-rows: 1fr 1fr;
-    //     grid-template-columns: repeat(3, 1fr);
-    //     row-gap: 30px;
-
-    //     figure {
-    //         width: 413px;
-    //         height: 313px;
-    //         background: #f00;
-    //         border-radius: 1rem;
-    //     }
-    // }
-
-    .grid {
-        display: flex;
-        gap: 30px;
-
-        figure {
-            width: 413px;
-            height: 313px;
-            background: #f00;
-            border-radius: 1rem;
         }
     }
 
-    .color {
+
+
+
+}
+
+.case {
+
+    .skill {
+        ul {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-end;
+            margin: 0 0 1.5rem 0;
+
+            li {
+                font-size: 1.3rem;
+                font-weight: 500;
+            }
+        }
+    }
+
+}
+
+
+.scase {
+    display: flex;
+    gap: 10rem;
+    // flex-direction: row;
+    justify-content: space-evenly;
+    height: calc(100vh - 40rem);
+    // margin: 0 0 3.5rem 0;
+    // overflow: hidden;
+
+    .content {
         display: flex;
-        gap: 1rem;
+        flex: 0.3;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    h2 {
+        text-indent: -0.3rem;
+        font-size: 6rem;
+        margin: 0 0 1.5rem 0;
+    }
+
+    .stit {
+        font-size: 3rem;
+        margin: 0 0 3rem 0;
+    }
+
+
+    .type,
+    .font {
         margin: 0 0 2.5rem 0;
-
-        dd {
-            font-size: 0;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            border: 1px solid rgb(51, 51, 51, 0.5);
-        }
-
-    }
-
-    .des {
-        white-space: pre-wrap;
-        font-size: 1.5rem;
         line-height: 1.45;
     }
 
 
-    // 슬라이드 기본 padding
-    .slick-list {
-        padding: 0 -1.5rem;
+    dt {
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin: 0 0 0.5rem 0;
     }
 
-    .slick-slide {
-        padding: 0 1.5rem;
+    dd {
+        font-size: 1.5rem;
     }
 
-    .loading {}
+    .preview {
+        display: flex;
+        flex: 0.7;
+        flex-direction: column;
+        justify-content: space-between;
 
-    // 저작권 나중에 편집
-    // .fp-watermark {
-    //     display: none;
-    // }
+        // ul {
+        //     display: flex;
+        //     gap: 1.5rem;
+        //     justify-content: flex-end;
+        //     margin: 0 0 4.5rem 0;
+        // }
 
-    .dark_btn {
-        position: relative;
+        figure {
+            width: auto;
+            height: 640px;
+            border: 1px solid #333333;
+            border-radius: 1rem;
+            // overflow-y: hidden;
+
+            &.itm01 {
+                background: url(../../public/image/itm01.png) no-repeat center top/cover;
+            }
+
+            &.itm02 {
+                background: url(../../public/image/itm02.png) no-repeat center top/cover;
+            }
+
+            &.itm03 {
+                background: url(../../public/image/itm03.png) no-repeat center top/cover;
+            }
+
+            &.itm04 {
+                background: url(../../public/image/itm04.png) no-repeat center top/cover;
+            }
+
+            &.itm05 {
+                background: url(../../public/image/itm05.png) no-repeat center top/cover;
+            }
+        }
+
+    }
+}
+
+
+.section {
+    position: relative;
+
+    .slideArrows {
 
         button {
-            // position: absolute;
-            // top: 0;
-            // left: 0;
-            visibility: hidden;
-            width: 60px;
-            z-index: -1;
-        }
-
-        label {
             position: absolute;
             top: 50%;
-            right: 0;
-            transform: translateY(-50%);
-            display: inline-block;
-            width: 60px;
-            height: 30px;
-            background: rgb(160, 163, 201);
-            // background: rgb(168, 160, 190);
-            font-size: 0;
-            border-radius: 15px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 1rem 1rem 0.5rem 1rem;
+            font-size: 2rem;
+            background: inherit;
+            border: 1px solid #333;
+            border-radius: 0.5rem;
+            cursor: pointer;
 
-            &::after {
-                content: "";
-                position: absolute;
-                width: 26px;
-                height: 26px;
-                top: 2px;
-                left: 2px;
-                border-radius: 50%;
-                background: #fff
+            &:hover {
+                background: rgb(160, 163, 201);
+                // border: 1px solid rgb(255, 255, 255, 0);
             }
 
-            &.on::after {
-                background: rgb(83, 70, 92);
-                left: auto;
-                right: 2px;
+            &:first-child {
+                margin: 0 0 0 -700px;
+
             }
+
+            &:last-child {
+                margin: 0 0 0 700px;
+            }
+        }
+
+    }
+
+
+}
+
+// .grid {
+//     display: grid;
+//     grid-template-rows: 1fr 1fr;
+//     grid-template-columns: repeat(3, 1fr);
+//     row-gap: 30px;
+
+//     figure {
+//         width: 413px;
+//         height: 313px;
+//         background: #f00;
+//         border-radius: 1rem;
+//     }
+// }
+
+.grid {
+    display: flex;
+    gap: 30px;
+
+    figure {
+        width: 413px;
+        height: 313px;
+        border-radius: 1rem;
+        margin: 0 0 2rem 0;
+        border: 1px solid #333;
+
+        &.training01 {
+            background: url(../../public/image/training01.png)no-repeat center top/cover;
+        }
+
+        &.training02 {
+            background: url(../../public/image/training02.png)no-repeat center top/cover;
+        }
+
+        &.training03 {
+            background: url(../../public/image/training03.png)no-repeat center top/cover;
         }
     }
 
-    footer {
+    h3 {
+        font-size: 17px;
+        font-weight: 500;
+        margin: 0 0 1rem 0;
+    }
+
+    ul {
         display: flex;
-        position: fixed;
-        bottom: 0;
-        width: calc(100% - 20rem);
-        margin: 0 0 3rem 0;
+        gap: 1rem;
 
-        .icon {
-            display: flex;
-            justify-content: flex-end;
-            flex-direction: column;
-            // color: #2a2b69;
-            color: #292944;
+        li {
+            font-size: 14px;
+            font-weight: 400;
+            border: inherit;
+            background-color: rgb(208, 210, 235);
+        }
+    }
+}
 
-            img {
-                width: 4rem;
-                height: 4rem;
-                filter: invert(20%);
-            }
+.color {
+    display: flex;
+    gap: 1rem;
+    margin: 0 0 2.5rem 0;
 
-            .github {
-                font-size: 2.5rem;
-                margin: 0.7rem;
-            }
+    dd {
+        font-size: 0;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        border: 1px solid rgb(51, 51, 51, 0.5);
+    }
+
+}
+
+.des {
+    white-space: pre-wrap;
+    font-size: 1.5rem;
+    line-height: 1.45;
+}
+
+
+// 슬라이드 기본 padding
+.slick-list {
+    padding: 0 -1.5rem;
+}
+
+.slick-slide {
+    padding: 0 1.5rem;
+}
+
+.loading {}
+
+// 저작권 나중에 편집
+// .fp-watermark {
+//     display: none;
+// }
+
+.dark_btn {
+    position: relative;
+
+    button {
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        visibility: hidden;
+        width: 60px;
+        z-index: -1;
+    }
+
+    label {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        display: inline-block;
+        width: 60px;
+        height: 30px;
+        background: rgb(160, 163, 201);
+        // background: rgb(168, 160, 190);
+        font-size: 0;
+        border-radius: 15px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            top: 2px;
+            left: 2px;
+            border-radius: 50%;
+            background: #fff
         }
 
-        .license {
-            margin: 0 0 0 auto;
+        &.on::after {
+            background: rgb(83, 70, 92);
+            left: auto;
+            right: 2px;
+        }
+    }
+}
 
-            p {
-                writing-mode: vertical-rl;
-                text-orientation: mixed;
-                font-size: 1.5rem;
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 20rem);
+    margin: 0 0 3rem 0;
+
+    .icon {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        // color: #2a2b69;
+        color: #292944;
+
+        img {
+            width: 4rem;
+            height: 4rem;
+            filter: invert(20%);
+        }
+
+        .github {
+            font-size: 2.5rem;
+            margin: 0.7rem;
+        }
+    }
+
+    .license {
+        margin: 0 0 0 auto;
+
+        p {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: 1.5rem;
+            color: #292944;
+
+            span {
+                font-size: 1.3rem;
                 color: #292944;
-
-                span {
-                    font-size: 1.3rem;
-                    color: #292944;
-                }
             }
         }
     }

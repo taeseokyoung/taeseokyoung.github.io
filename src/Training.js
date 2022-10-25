@@ -1,8 +1,6 @@
 import React, { useRef } from 'react'
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import { portfolio } from "./Data";
-
+import { Link } from 'react-router-dom';
+import { training } from "./Data";
 
 const Training = () => {
 
@@ -12,15 +10,26 @@ const Training = () => {
         <section className="section">
             <div className="case">
                 <div className="grid">
-                    <figure className='t01'>
-                        <button>1</button>
-                    </figure>
-                    <figure className='t02'>
-                        <button>2</button>
-                    </figure>
-                    <figure className='t03'>
-                        <button>3</button>
-                    </figure>
+                    {
+                        training.map(it => {
+                            return (
+                                <div className="trainbox">
+                                    <a href={it.link} target="_blank">
+                                        <figure className={`training0${it.id}`}> </figure>
+                                    </a>
+                                    <h3>{it.title}</h3>
+                                    <ul>
+                                        {
+                                            it.skill.map(
+                                                it => <li className='btn'>{it}</li>
+                                            )
+                                        }
+                                    </ul>
+                                </div>
+
+                            )
+                        })
+                    }
                     {/* <figure>04</figure>
                     <figure>05</figure>
                     <figure>06</figure> */}
