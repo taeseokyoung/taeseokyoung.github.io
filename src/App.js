@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 // import { change, loading } from './store';
 import Cover from './Cover';
 import Prototype from './Prototype';
@@ -13,8 +13,10 @@ import './css/reset.css';
 import './css/App.scss';
 
 const App = () => {
-    // const dispatch = useDispatch();
+
     const { changeMode } = useSelector(it => it)
+
+
 
     // const [loading, setLoading] = useState();
 

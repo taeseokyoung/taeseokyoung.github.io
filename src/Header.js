@@ -1,10 +1,11 @@
 import React from 'react'
 import { gnb } from './Data'
 import { useDispatch, useSelector } from 'react-redux'
-import { change } from './store';
+import { change, changenav } from './store';
 
 const Header = () => {
     const { changeMode } = useSelector(it => it)
+    const { changeNav } = useSelector(it => it)
 
     const dispatch = useDispatch();
     return (
@@ -16,8 +17,8 @@ const Header = () => {
                         {
                             gnb.map((it, idx) => {
                                 return (
-                                    <li key={it.id}>
-                                        <a href={`#${it.title}`}>{it.title}</a></li>
+                                    <li key={it.id} >
+                                        <a href={`#${it.title}`} onClick={() => dispatch(changenav())} className={changeNav ? "on" : ""}>{it.title}</a></li>
                                 )
                             })
                         }

@@ -10,6 +10,14 @@ const changeMode = createSlice({
 
 export const { change } = changeMode.actions;
 
+const changeNav = createSlice({
+    name: '네비게이션',
+    initialState: false,
+    reducers: {
+        change: (state) => !state
+    }
+})
+export const { changenav } = changeNav.actions;
 // const LoadingPage = createSlice({
 //     name: '로딩페이지',
 //     initialState: false,
@@ -23,6 +31,7 @@ export const { change } = changeMode.actions;
 const store = configureStore({
     reducer: {
         changeMode: changeMode.reducer,
+        changeNav: changeNav.reducer,
         // LoadingPage: LoadingPage.reducer
     }
 });
