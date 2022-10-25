@@ -18,6 +18,8 @@ const changeNav = createSlice({
     }
 })
 export const { changenav } = changeNav.actions;
+
+
 // const LoadingPage = createSlice({
 //     name: '로딩페이지',
 //     initialState: false,
