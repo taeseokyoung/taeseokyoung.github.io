@@ -9,6 +9,7 @@
 html {
     font-size: 10px;
     height: 100%;
+    color: #212529;
 }
 
 //https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients
@@ -207,12 +208,11 @@ body {
     position: relative;
     width: calc(100% - 20rem);
     margin: 0 auto;
-
 }
 
 .btn {
     padding: 0.7rem 1.7rem;
-    border: 1px solid #333333;
+    border: 1px solid #212529;
     border-radius: 0.5rem;
 }
 
@@ -229,7 +229,6 @@ body {
         h1 {
             font-size: 2.3rem;
             font-weight: 600;
-            color: #2a2b69;
         }
 
         nav {
@@ -242,7 +241,7 @@ body {
                     margin: 0 2rem 0 0;
                     font-size: 1.8rem;
                     font-weight: 500;
-                    color: #292944;
+                    color: #212529;
                 }
 
                 margin: 0 2rem 0 0;
@@ -296,7 +295,7 @@ body {
                 margin: 2rem 0 0 0;
                 font-size: 2rem;
                 font-weight: 400;
-                color: #111111;
+                color: #212529;
             }
         }
 
@@ -411,7 +410,7 @@ body {
         figure {
             width: auto;
             height: 550px;
-            border: 1px solid #333333;
+            border: 1px solid #212529;
             border-radius: 1rem;
             // overflow-y: hidden;
 
@@ -452,7 +451,7 @@ body {
             padding: 1rem 1rem 0.5rem 1rem;
             font-size: 2rem;
             background: inherit;
-            border: 1px solid #333;
+            border: 1px solid #212529;
             border-radius: 0.5rem;
             cursor: pointer;
 
@@ -500,7 +499,7 @@ body {
         height: 300px;
         border-radius: 1rem;
         margin: 0 0 2rem 0;
-        border: 1px solid #333;
+        border: 1px solid #212529;
 
         &.training01 {
             background: url(../../public/image/training01.png)no-repeat center top/cover;
@@ -551,6 +550,7 @@ body {
 
 .des {
     white-space: pre-wrap;
+    word-break: keep-all;
     font-size: 1.5rem;
     line-height: 1.45;
 }
@@ -698,8 +698,6 @@ footer {
         display: flex;
         justify-content: flex-end;
         flex-direction: column;
-        // color: #2a2b69;
-        color: #292944;
 
         img {
             width: 4rem;
@@ -720,11 +718,11 @@ footer {
             writing-mode: vertical-rl;
             text-orientation: mixed;
             font-size: 1.5rem;
-            color: #292944;
+
 
             span {
                 font-size: 1.3rem;
-                color: #292944;
+
             }
         }
     }
