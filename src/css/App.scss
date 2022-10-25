@@ -723,11 +723,14 @@ footer {
 }
 
 .fp-watermark {
-    width: 100vh;
-    margin: 0 0 2rem 0;
+    margin: 0 auto;
 
     a {
+
+        width: 100vh;
         background: inherit;
+        padding: 0 0 2rem 0;
+
     }
 
 }
@@ -982,10 +985,12 @@ footer {
         position: relative;
 
         .slideArrows {
+            position: absolute;
+            top: 12rem;
+            right: 6rem;
 
             button {
-                position: absolute;
-                top: 12rem;
+
                 padding: 0.5rem 0.5rem 0 0.5rem;
                 font-size: 2rem;
                 background: inherit;
@@ -999,12 +1004,12 @@ footer {
                 }
 
                 &:first-child {
-                    margin: 0 auto 0 16rem;
+                    margin: 0 0 0 -4rem;
 
                 }
 
                 &:last-child {
-                    margin: 0 auto 0 20rem;
+                    margin: 0 auto 0 0;
                 }
             }
 
@@ -1180,6 +1185,7 @@ footer {
         }
 
         .license {
+            display: none;
             margin: 0 0 0 auto;
 
             p {
@@ -1194,5 +1200,18 @@ footer {
                 }
             }
         }
+    }
+
+    .fp-watermark {
+        margin: 0;
+
+        a {
+
+            width: auto;
+            background: inherit;
+            padding: 0 0 2rem 0;
+
+        }
+
     }
 }
