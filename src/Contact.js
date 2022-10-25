@@ -1,21 +1,25 @@
 import React from 'react'
 import { profile } from "./Data";
-
+import { FiMail, FiSmartphone } from "react-icons/fi";
 const Contact = () => {
     return (
         <section className="section">
             <div className="contact">
-                <div className="tit">
-                    <h2>Contact me!</h2>
+                <div className="left">
+                    <h2>저에게<br /><span>전화와 이메일로</span><br />연락하실 수 있습니다. </h2>
                     <ul>
-                        <li className='name'>{profile.name}</li>
-                        <li className='ename'>{profile.ename}</li>
-                        <li className='email'>{profile.email}</li>
-                        <li className='tel'>{profile.tel}</li>
+                        <li className='email'>
+                            <FiMail />
+                            <a href={profile.email}>{profile.email}</a>
+                        </li>
+                        <li className='tel'>
+                            <FiSmartphone />
+                            <a href={profile.tel}>{profile.tel}</a>
+                        </li>
                     </ul>
                     <button className='btn'>RESUME</button>
                 </div>
-                <div className="txt">
+                <div className="right">
                     <figure className='tae02'></figure>
                 </div>
             </div>
