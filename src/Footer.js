@@ -7,8 +7,8 @@ const Footer = () => {
     return (
         <footer>
             <div className="icon">
-                <a href="https://tae-seokyoung.tistory.com/"><img src={process.env.PUBLIC_URL + "/image/tstory.svg"} alt="" /></a>
-                <a href="https://github.com/taeseokyoung"><FiGithub className='github' /></a>
+                <a href="/"><img src={process.env.PUBLIC_URL + "/image/tstory.svg"} alt="" /></a>
+                <a href="/"><FiGithub className='github' /></a>
             </div>
             <div className="license">
                 <p>Ver. <span>2022. 1. 0. 0.</span></p>
